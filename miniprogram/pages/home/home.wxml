@@ -1,0 +1,5 @@
+<!--miniprogram/pages/home/home.wxml-->
+<text>miniprogram/pages/home/home.wxml</text>
+<view>
+<button class="btn" bindtap='login' type="primary" style='margin-top:40px;'>登 录</button>
+</view>

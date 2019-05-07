@@ -1,0 +1,41 @@
+{
+  "pages": [
+    
+    "pages/home/home",
+    "pages/info/info",
+    "pages/employ/employ",
+    "pages/home/login/login",
+    "pages/home/register/register"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "报修",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "images/home-m.png",
+        "iconPath": "images/home-s.png",
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/employ-m.png",
+        "iconPath": "images/employ-s.png",
+        "pagePath": "pages/employ/employ",
+        "text": "订单"
+      },
+      {
+        "selectedIconPath": "images/info-m.png",
+        "iconPath": "images/info-s.png",
+        "pagePath": "pages/info/info",
+        "text": "我的"
+      }
+    ]
+  }
+}
