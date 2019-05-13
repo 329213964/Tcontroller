@@ -62,13 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  /**
-   * 登录跳转
-   */
-  login_href:function(e){
-    wx.redirectTo({
-      url: '/pages/home/login/login',
-    })
   }
 })
