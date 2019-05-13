@@ -1,1 +1,14 @@
 /* miniprogram/pages/info/info.wxss */
+
+.imgdiv{
+  margin-top: 20%;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.adm-png{
+  opacity: 0.5;
+  width: 80px;
+  height: 80px;
+}
