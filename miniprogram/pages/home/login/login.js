@@ -16,7 +16,7 @@ Page({
 
   //跳转注册
   register_href:function(e){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../register/register',
     })
   },
@@ -56,6 +56,9 @@ Page({
         if (res.data) {
           wx.showToast({
             title: '登陆成功',
+          })
+          wx.switchTab({
+            url: '/pages/home/home',
           })
         }
         else {
