@@ -1,2 +1,7 @@
 <!--miniprogram/pages/info/info.wxml-->
-<text>miniprogram/pages/info/info.wxml</text>
+
+<view class='imgdiv'>
+  <image src='/images/adm.png' class='adm-png'></image>
+  <text style='color:#8a8a8a'>未登录</text>
+</view>
+<button class="btn" bindtap='login_href' type="primary" style='margin-top:60px;'>登 录</button>
