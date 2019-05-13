@@ -47,3 +47,9 @@
   border-radius: 98rpx;
   border: 0; 
 }
+
+.toy{
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
