@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/info/info",
     "pages/home/home",
+    "pages/info/info",
     "pages/employ/employ",
     "pages/home/login/login",
     "pages/home/register/register",
     "pages/home/forget/forget",
-    "pages/home/login/login-other/login-other"
+    "pages/home/login/login-other/login-other",
+    "pages/home/advertise/advertise"
   ],
   "window": {
     "backgroundTextStyle": "light",

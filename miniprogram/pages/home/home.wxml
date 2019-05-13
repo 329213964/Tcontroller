@@ -1,5 +1,5 @@
 <!--miniprogram/pages/home/home.wxml-->
-<text>miniprogram/pages/home/home.wxml</text>
-<view>
-<button class="btn" bindtap='login' type="primary" style='margin-top:40px;'>登 录</button>
-</view>
+<button class='btn1' open-type='openSetting'>
+    <image class='btnImg'                           src='../../images/wechat.png'></image>
+    <view>登录</view>
+ </button>
