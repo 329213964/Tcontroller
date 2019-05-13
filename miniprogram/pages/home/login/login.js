@@ -16,7 +16,7 @@ Page({
 
   //跳转注册
   register_href:function(e){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../register/register',
     })
   },
