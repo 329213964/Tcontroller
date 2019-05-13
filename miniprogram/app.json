@@ -1,11 +1,22 @@
-{
+﻿{
   "pages": [
-    
+<<<<<<< HEAD
+<<<<<<< HEAD
     "pages/home/home",
+=======
+>>>>>>> f154729438446dcbb5a70c05c054a6a0748c3e60
+=======
+>>>>>>> f154729438446dcbb5a70c05c054a6a0748c3e60
     "pages/info/info",
+    "pages/home/home",
     "pages/employ/employ",
     "pages/home/login/login",
-    "pages/home/register/register"
+<<<<<<< HEAD
+=======
+    "pages/home/register/register",
+>>>>>>> f154729438446dcbb5a70c05c054a6a0748c3e60
+    "pages/home/forget/forget",
+    "pages/home/login/login-other/login-other"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -37,5 +48,6 @@
         "text": "我的"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
