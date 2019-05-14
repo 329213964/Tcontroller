@@ -26,6 +26,7 @@
   color: #999999;
 }
 
+
 .btn1 {
   width: 80%;
   margin-top: 20rpx;
@@ -48,6 +49,22 @@
   border-radius: 98rpx;
   border: 0; 
 }
+
+.toy{
+  padding-top: 10px;
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+  position: relative;
+  left: 125px;
+  padding-left: 10px;
+}
+
+/* .otherindex{
+  padding-top: 10px;
+  position: relative;
+  left: 130px;
+} */
 
 .state{
   padding: 40px 0;

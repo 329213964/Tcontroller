@@ -1,4 +1,7 @@
 // miniprogram/pages/home/home.js
+//导包
+var myUtils = require("../../utils/myUtils.js")
+
 Page({
 
   /**
