@@ -57,9 +57,6 @@ Page({
           wx.showToast({
             title: '登陆成功',
           })
-          wx.switchTab({
-            url: '/pages/home/home',
-          })
         }
         else {
           wx.showModal({
