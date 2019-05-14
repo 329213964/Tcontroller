@@ -67,7 +67,7 @@ Page({
    * 登录跳转
    */
   login_href:function(e){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/home/login/login',
     })
   }
