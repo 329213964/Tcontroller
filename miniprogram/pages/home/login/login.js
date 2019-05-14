@@ -1,3 +1,6 @@
+
+
+
 Page({
   //定义全局变量data
   data: {
@@ -57,9 +60,9 @@ Page({
           wx.showToast({
             title: '登陆成功',
           })
-          wx.switchTab({
-            url: '/pages/home/home',
-          })
+          // wx.switchTab({
+          //   url: '/pages/home/home',
+          // })
         }
         else {
           wx.showModal({

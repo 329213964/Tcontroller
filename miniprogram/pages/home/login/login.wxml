@@ -1,17 +1,4 @@
-<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
-    <view class="page__bd">
-        <view class="state">
-          <view class="flag"> 用户注册</view>
-          <view class="flag"> 手机绑定</view>
-          <view class="flag"> 用户登录</view>
-          <view class="flag"> 提交订单</view>
-        </view>
-       
-    </view>
-</view>
-<view class="pledgecont">
-</view>
-        
+      
 <view class="content">
   <view class="account">
     <view class="title">账号</view>
@@ -28,9 +15,13 @@
     <text style='float:right; text-decoration:underline;'>忘记密码?</text>
   </view>
   
-  <button class='btn1' bindtap='login_href'>
+  <button class='btn1' bindtap='login'>
 
     <view>登录</view>
  </button>
+ <!-- <view class='otherindex' style='text-decoration:underline'>社交帐号登录</view> -->
+ <image src='/images/wechat1.png' class='toy'></image>
+ <image src='/images/sina.png' class='toy'></image>
+ <image src='/images/qq.png' class='toy'></image>
 </view>
-<view>{{message}}</view>
+
