@@ -1,18 +1,17 @@
-// miniprogram/pages/home/home.js
+// miniprogram/pages/home/phone/phone.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+   
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
 
   },
 
@@ -20,7 +19,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
+
   },
 
   /**
@@ -63,15 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  /**
-   * 登录跳转
-   */
-  login_href: function (e) {
-    wx.navigateTo({
-      url: '/pages/home/login/login',
-    })
   }
-  
 })

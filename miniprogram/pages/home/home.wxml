@@ -1,5 +1,10 @@
 <!--miniprogram/pages/home/home.wxml-->
-<text>miniprogram/pages/home/home.wxml</text>
-<view>
-<button class="btn" bindtap='login' type="primary" style='margin-top:40px;'>登 录</button>
-</view>
+<button class='btn1' bindtap='login_href'>
+
+    <view>登录</view>
+</button>
+<view>社交帐号登录</view>
+<image src='/images/wechat1.png' class='toy'></image>
+<image src='/images/sina.png' class='toy'></image>
+<image src='/images/qq.png' class='toy'></image>
+
