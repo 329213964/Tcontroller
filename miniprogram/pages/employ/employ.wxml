@@ -1,2 +1,4 @@
-<!--miniprogram/pages/employ/employ.wxml-->
-<text>miniprogram/pages/employ/employ.wxml</text>
+
+<view wx:for="{{menu}}">
+    <text>{{item}}</text>
+</view>
