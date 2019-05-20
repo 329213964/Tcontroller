@@ -79,7 +79,7 @@ right: -50%;
   border-right: 8px solid transparent;
   position: absolute;
   top: -14px;
-  left: 12.5%;
+  left: 37%;
   margin-left: -8px;
 }
 
@@ -125,4 +125,34 @@ right: -50%;
 
 .pull-right{
   float: right;
+}
+
+.get-code-btn {
+    height: 60rpx;
+    line-height: 60rpx;
+    position: absolute;
+    top: 30rpx;
+    right: 0;
+    z-index: 22;
+    background-color: #6de2bb;
+    color: #fff;
+    text-align: center;
+    border-radius: 40rpx;
+    font-size: 24rpx;
+}
+.get-code-btn.disabled {
+    background-color: #999;
+}
+
+.weui-vcode-btn-clicked{
+  display: inline-block;
+  height: 2.58823529em;
+  margin-left: 5px;
+  padding: 0 0.6em 0 0.7em;
+  border-left: 1px solid #E5E5E5;
+  line-height: 2.58823529em;
+  vertical-align: middle;
+  font-size: 17px;
+  color: #aeaeae;
+  white-space: nowrap;
 }
