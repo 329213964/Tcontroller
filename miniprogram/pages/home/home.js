@@ -75,6 +75,10 @@ Page({
     wx.navigateTo({
       url: '/pages/home/login/login',
     })
-  }
+  },
   
+  test:function(e){
+    codeIsCanClick: false
+    }
+
 })
