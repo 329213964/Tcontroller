@@ -1,4 +1,6 @@
 
 <view wx:for="{{menu}}">
-    <text>{{item}}</text>
+    <text >{{item}}</text>
+    <text wx:if="{{item.itemid==1005}}">okk</text>
+    <text class='text'>asdasdsadasdasgjdgasjdgashjdasjhdajshgdjhsadjhasgdkhjasgdhjkasgkhjdaskhjdg</text>
 </view>

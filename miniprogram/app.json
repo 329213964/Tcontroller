@@ -1,15 +1,17 @@
 {
   "pages": [
+    
+    "pages/home/home",
     "pages/home/phone/phone",
     "pages/employ/employ",
     "pages/info/info",
-    "pages/home/home",
-   
     "pages/home/login/login",
     "pages/home/register/register",
     "pages/home/forget/forget",
     "pages/home/login/login-other/login-other",
-    "pages/home/advertise/advertise"
+    "pages/home/advertise/advertise",
+    "pages/home/advertise/advertise-info/advertise-info"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
