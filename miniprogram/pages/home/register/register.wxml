@@ -16,15 +16,21 @@
 <view class="content">
   <view class="account">
     <view class="title">账号</view>
-    <view class="num"><input bindinput="accountInput" placeholder="用户名/邮箱/手机号" placeholder-style="color:#999999;"/></view>
+    <view class="num"><input bindinput="accountInput" class="ac" placeholder="用户名/邮箱/手机号" placeholder-style="color:#999999;"/></view>
   </view>
   <view class="hr"></view>
    <view class="account">
     <view class="title">密码</view>
-    <view class="num"><input bindblur="pwdBlur" placeholder="请输入密码" password placeholder-style="color:#999999;"/></view>
+    <view class="num"><input bindblur="pwdBlur" class="pwd" placeholder="请输入密码" password placeholder-style="color:#999999;"/></view>
   </view>
+<view class="hr"></view>
+   <view class="checkaccount">
+    <view class="title">确认密码</view>
+    <view class="num"><input bindblur="checkpwdBlur" class="checkpwd" placeholder="请再次输入密码" password placeholder-style="color:#999999;"/></view>
+  </view>
+
   <!-- <view bindtap='login_href'>登录</view> -->
   <view class="hr"></view>
-  <button class="btn" bindtap='login' type="primary">注册</button>
+  <button class="btn" bindtap='register' type="primary">下一步</button>
 </view>
 <view>{{message}}</view>

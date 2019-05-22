@@ -9,7 +9,8 @@ Page({
    */
   data: {
     account: "",
-    password: ""
+    password: "",
+    checkpassword:""
   },
 
   /**
@@ -82,6 +83,13 @@ Page({
       this.setData({ password: pwd });//把获取到的密码赋值给date中的password
     }
   },
+  //处理checkpwdBlur的触发事件
+  checkpwdBlur: function (e) {
+    var checkpwd = e.detail.value;//从页面获取到用户输入的密码
+    if (checkpwd != '') {
+      this.setData({ checkpassword: checkpwd });//把获取到的密码赋值给date中的password
+    }
+  },
   login_href: function (e) {
     wx.redirectTo({
       url: '../login/login',
@@ -95,7 +103,8 @@ Page({
       data: {
         //从全局变量data中获取数据
         account: this.data.account,
-        password: this.data.password
+        password: this.data.password,
+        checkpassword:this.data.checkpassword
       },
       method: 'get',//定义传到后台接受的是post方法还是get方法
       header: {
@@ -104,7 +113,7 @@ Page({
       success: function (res) {
         console.log("调用API成功");
         wx.switchTab({
-          url: '../login/login'　　// 注册成功，跳转到登陆页面
+          url: '../phone/phone'　　// 注册成功，跳转到登陆页面
         })
       },
       fail: function (res) {
