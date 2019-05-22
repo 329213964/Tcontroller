@@ -144,7 +144,7 @@ Page({
           that.data.isnum= 'weui-vcode-btn';
           that.data.isnumtext ='获取验证码'
         }else{
-          that.data.isnumtext = '已发送(' + that.data.cooldownNum +'s)'
+          that.data.isnumtext = '已发送(' + cooldownNum +'s)'
         }
         that.setData({
           cooldownNum:cooldownNum,
