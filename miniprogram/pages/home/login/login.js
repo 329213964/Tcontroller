@@ -42,12 +42,12 @@ Page({
     }
     
     wx.request({
-      url: 'https://skr.foxcii.com/user/login',//后面详细介绍
+      url: 'http://localhost:8080/user/login',//后面详细介绍
       //定义传到后台的数据
       data: {
         //从全局变量data中获取数据
-        username: this.data.account,
-        password: this.data.password,
+        userName: this.data.account,
+        userPwd: this.data.password,
       },
       method: 'get',//定义传到后台接受的是post方法还是get方法
       header: {
@@ -60,9 +60,22 @@ Page({
           wx.showToast({
             title: '登陆成功',
           })
-          // wx.switchTab({
-          //   url: '/pages/home/home',
-          // })
+          
+          //更新getApp().globalData中的数据，是更新内存中的数据
+          getApp().globalData.login_status = 1
+          getApp().globalData.user_address=res.data.userAddress
+          getApp().globalData.user_icon=res.data.userInfo
+          getApp().globalData.user_phone = res.data.userPhone.substring(0, 3) + '*****' + res.data.userPhone.substring(8, 3)
+          getApp().globalData.user_name = res.data.userName
+          //将用户的信息保存到手机存储卡中
+          wx.setStorageSync("login_status",1)
+          wx.setStorageSync("user_address", res.data.userAddress)
+          wx.setStorageSync("user_icon", res.data.userInfo)
+          wx.setStorageSync("user_phone", res.data.userPhone.substring(0, 3) + '*****' + res.data.userPhone.substring(8, 11))
+          wx.setStorageSync("user_name", res.data.userName)
+          wx.switchTab({
+            url: '/pages/home/home',
+          })
         }
         else {
           wx.showModal({

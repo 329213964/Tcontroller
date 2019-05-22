@@ -1,15 +1,24 @@
 <!--miniprogram/pages/info/info.wxml-->
-<view wx:if='{{test==1}}'>
+<view wx:if='{{login_status==0}}'>
   <view class='imgdiv'>
     <image src='/images/adm.png' class='adm-png'></image>
     <text style='color:#8a8a8a'>未登录</text>
   </view>
   <button class="btn" bindtap='login_href' type="primary" style='margin-top:60px;'>登 录</button>
 </view>
-<view wx:if='{{test==2}}'>
+<view wx:if='{{login_status==1}}'>
   <view class='imgdiv'>
-    <image src='/images/adm.png' class='adm-png'></image>
-    <text style='color:#8a8a8a'>未登录</text>
+    <image src='/images/{{user_icon}}.png' class='adm-png'></image>
+    <text style='color:#8a8a8a'>{{user_name}}</text>
   </view>
-  <button class="btn" bindtap='login_href' type="primary" style='margin-top:60px;'>登 录</button>
-</view>
+  <view class='address-div' style='margin-top:20px'>
+    <text class='address-div-text'>联系地址</text>
+    <image class='arrow_right' src='/images/arrow_right.png'></image>
+  </view>
+  <view class='address-div'>
+    <text class='address-div-text'>手机绑定</text>
+    <image class='arrow_right' src='/images/arrow_right.png'></image>
+    <text class='phoneNum'>{{user_phone}}</text>
+  </view>
+  <button class="loggout-btn" hover-class='loggout-btn-click' bindtap='loggout' style='margin-top:60px;'>注 销</button>
+ </view>
