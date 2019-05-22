@@ -28,19 +28,14 @@ Page({
         console.log("调用API成功");
         console.log(res.data);
         if (res.data) {
-          wx.showToast({
-            title: '登陆成功',
-          })
-          
           that.setData({
             menu: res.data
           })
-          
         }
         else {
           wx.showModal({
             title: '提示',
-            content: '用户名或者密码错误',
+            content: '服务器繁忙',
             showCancel: false
           })
         }

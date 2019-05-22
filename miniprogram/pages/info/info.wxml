@@ -7,15 +7,15 @@
   <button class="btn" bindtap='login_href' type="primary" style='margin-top:60px;'>登 录</button>
 </view>
 <view wx:if='{{login_status==1}}'>
-  <view class='imgdiv'>
+  <view class='imgdiv1'>
     <image src='/images/{{user_icon}}.png' class='adm-png'></image>
     <text style='color:#8a8a8a'>{{user_name}}</text>
   </view>
-  <view class='address-div' style='margin-top:20px'>
+  <view class='address-div' style='margin-top:20px' hover-class='address-div-click'>
     <text class='address-div-text'>联系地址</text>
     <image class='arrow_right' src='/images/arrow_right.png'></image>
   </view>
-  <view class='address-div'>
+  <view class='address-div' hover-class='address-div-click'>
     <text class='address-div-text'>手机绑定</text>
     <image class='arrow_right' src='/images/arrow_right.png'></image>
     <text class='phoneNum'>{{user_phone}}</text>
