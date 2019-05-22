@@ -45,7 +45,7 @@
 .address-div{
   border-top: 1px solid #eaeaea;
   border-bottom: 1px solid #eaeaea;
-  padding: 10px
+  padding: 10px;
 }
 
 .address-div-click{
@@ -58,6 +58,13 @@
 .address-div-text{
   font-size: 16px;
   color: #5a5a5a;
+  vertical-align: text-top;
+}
+
+.info_mini_icon{
+  width: 30px;
+  height: 30px;
+  vertical-align: top;
 }
 
 .arrow_right{
