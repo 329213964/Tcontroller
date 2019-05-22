@@ -10,6 +10,15 @@
    padding-bottom: 10px;
    width: 90%;
 }
+.checkaccount{
+  display: flex;
+   flex-direction: row;
+   padding-left: 20px;
+   padding-top: 20px;
+   padding-bottom: 10px;
+   width: 90%;
+}
+
 .title{
    margin-right: 30px;
    font-weight: bold;
@@ -20,6 +29,15 @@
   width: 90%;
   margin: 0 auto;
 }
+.ac{
+  left: 125px;
+  position: absolute;
+}
+.pwd{
+  left: 125px;
+  position: absolute;
+}
+
 .see{
   position: absolute;
   right: 20px;
