@@ -1,4 +1,5 @@
 //app.js
+const Towxml = require('/towxml/main');  
 App({
   onLaunch: function () {
     
@@ -11,5 +12,6 @@ App({
     }
 
     this.globalData = {}
-  }
+  },
+  towxml: new Towxml()     
 })

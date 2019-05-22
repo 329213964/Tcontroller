@@ -6,13 +6,13 @@
     "pages/home/phone/phone",
     "pages/employ/employ",
     
-    
-   
     "pages/home/login/login",
     
     "pages/home/forget/forget",
     "pages/home/login/login-other/login-other",
-    "pages/home/advertise/advertise"
+    "pages/home/advertise/advertise",
+    "pages/home/advertise/advertise-info/advertise-info"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

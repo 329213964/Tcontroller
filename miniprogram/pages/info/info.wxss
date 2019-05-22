@@ -1,7 +1,7 @@
 /* miniprogram/pages/info/info.wxss */
 
 .imgdiv{
-  margin-top: 20%;
+  margin-top: 35%;
   display:flex;
   align-items: center;
   flex-direction: column;
@@ -33,4 +33,39 @@
 .btn1::after {
   border-radius: 98rpx;
   border: 0; 
+}
+
+.address-div{
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  padding: 10px
+}
+
+.address-div-text{
+  font-size: 16px;
+  color: #5a5a5a;
+}
+
+.arrow_right{
+  margin-top: 5px;
+  float: right;
+  width: 10px;
+  height: 20px;
+}
+
+.phoneNum{
+  font-size: 14px;
+  color: #7a7a7a;
+  float: right;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.loggout-btn{
+  color: #5a5a5a;
+}
+
+.loggout-btn-click{
+  background-color: #c22828;
+  color: #eaeaea
 }

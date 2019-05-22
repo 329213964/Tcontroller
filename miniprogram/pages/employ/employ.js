@@ -1,4 +1,4 @@
-
+var myUtils = require("../../utils/myUtils.js")
 
 // miniprogram/pages/employ/employ.js
 Page({
@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    login_status: 0,
     menu:{}
   },
 
@@ -14,7 +15,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
+    var that = this;
+    var status = myUtils.get("login_status");
+    if(status==0)return;
     wx.request({
       url: 'https://skr.foxcii.com/menu/selectAll',
       method: 'get',//定义传到后台接受的是post方法还是get方法
@@ -56,7 +59,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (myUtils.get("login_status") != null) {
+      var status = myUtils.get("login_status");
+    } else {
+      var status = 0;
+    }
+    this.setData({
+      login_status: status
+    })
   },
 
   /**
@@ -92,5 +102,11 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  login_href: function (e) {
+    wx.navigateTo({
+      url: '/pages/home/login/login',
+    })
+  },
 })
