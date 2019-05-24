@@ -1,4 +1,31 @@
+<view class='orderimg0_div' wx:if="{{login_status==0}}">
+  <image class='orderimg0' src='/images/order.png'></image>
+  <text>登录后查看历史订单</text>
+  <button class="orderimg0_btn" bindtap='login_href' type="primary" style='margin-top:60px;'>登 录</button>
+</view>
 
-<view wx:for="{{menu}}">
-    <text>{{item}}</text>
+<view class="page-wrapper" wx:if="{{login_status==1}}">
+  <view class="bus-list js_bus_list" wx:for="{{menu}}">
+      <view data-supplierid="100020" data-key="" class="bus-list-item  ">
+        <view class="bus-time"> 2019/5/14 08:25</view>
+        <!-- tobooking监听 -->
+        <view class="tobooking" bindtap='orderin'> 详情 </view>
+        <view class="detail">
+          <view class="detail1">
+            <view class="start">
+              <text class="icon-circle s-icon1"> 地址：</text>地址</view>
+            <!-- <view class="end">
+              <text class="icon-circle s-icon2"></text>连州</view> -->
+          </view>
+          <view class="tags">
+            <view>
+              <text class="countleft">客户名称</text>
+            </view>
+            <view>
+              <text class="b-tags js_tags"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
 </view>

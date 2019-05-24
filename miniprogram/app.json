@@ -11,10 +11,9 @@
     "pages/employ/employ",
     "pages/home/login/login",
     "pages/home/forget/forget",
-    
-    "pages/home/advertise/advertise"
-   
-    
+    "pages/home/advertise/advertise",
+    "pages/home/advertise/advertise-info/advertise-info"
+
   ],
   "window": {
     "backgroundTextStyle": "light",

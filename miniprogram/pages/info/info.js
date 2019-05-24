@@ -3,21 +3,23 @@
 var myUtils = require("../../utils/myUtils.js")
 
 Page({
-  test: null,
+  
   /**
    * 页面的初始数据
    */
   data: {
-
+    login_status:0,
+    user_name:"",
+    user_phone:"",
+    user_icon: "",
+    user_address: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      test:1
-    })
+    
   },
 
   /**
@@ -31,7 +33,29 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (myUtils.get("login_status")!=null){
+      var status = myUtils.get("login_status");
+    }else{
+      var status = 0;
+    }
+    
+    if (status == 1) {
+      var user_icon = myUtils.get("user_icon");
+      var user_name = myUtils.get("user_name");
+      var user_phone = myUtils.get("user_phone");
+      var user_address = myUtils.get("user_address");
+      this.setData({
+        user_name: user_name,
+        user_phone: user_phone,
+        user_icon: user_icon,
+        user_address: user_address
+      })
+    }
+    
+    this.setData({
+      login_status: status
+    })
+    
   },
 
   /**
@@ -74,6 +98,31 @@ Page({
   login_href:function(e){
     wx.navigateTo({
       url: '/pages/home/login/login',
+    })
+  },
+
+  loggout:function(e){
+    this.setData({
+      login_status: 0,
+      user_name: "",
+      user_phone: "",
+      user_icon: "",
+      user_address: ""
+    })
+    //更新getApp().globalData中的数据，是更新内存中的数据
+    getApp().globalData.login_status = 0
+    getApp().globalData.user_address = ""
+    getApp().globalData.user_icon = ""
+    getApp().globalData.user_phone = ""
+    getApp().globalData.user_name = ""
+    //将用户的信息保存到手机存储卡中
+    wx.setStorageSync("login_status", 0)
+    wx.setStorageSync("user_address", "")
+    wx.setStorageSync("user_icon", "")
+    wx.setStorageSync("user_phone", "")
+    wx.setStorageSync("user_name", "")
+    wx.navigateTo({
+      url: '/pages/home/home',
     })
   }
 })
