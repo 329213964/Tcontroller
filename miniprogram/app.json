@@ -1,18 +1,20 @@
 {
   "pages": [
+    "pages/home/login/login-other/login-other",
+    "pages/info/changesecond/changesecond",
+    "pages/info/changefirst/changefirst",
+    "pages/home/guarantee/guarantee",
     "pages/home/home",
     "pages/info/info",
     "pages/home/register/register",
     "pages/home/phone/phone",
     "pages/employ/employ",
-    
-    
-   
     "pages/home/login/login",
-    
     "pages/home/forget/forget",
-    "pages/home/login/login-other/login-other",
+    
     "pages/home/advertise/advertise"
+   
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
