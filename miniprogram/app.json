@@ -1,14 +1,13 @@
 {
   "pages": [
-    "pages/info/info",
-    "pages/home/home",
     
+    "pages/home/home",
+    "pages/home/login/login-other/login-wx",
+    "pages/info/info",
     "pages/home/register/register",
     "pages/home/phone/phone",
     "pages/employ/employ",
-    
     "pages/home/login/login",
-    
     "pages/home/forget/forget",
     "pages/home/login/login-other/login-other",
     "pages/home/advertise/advertise",

@@ -30,6 +30,69 @@ Page({
       this.setData({ password: pwd });//把获取到的密码赋值给全局变量Date中的password
     }
   },
+  wxlogin: function () {
+    wx.getSetting({
+      success(res) {
+        if (!res.authSetting['scope.userInfo']) {
+          wx.authorize({
+            scope: 'scope.userInfo',
+            success() {
+              console.log("授权成功");
+            }, fail: function (res) {
+              console.log("调用API失败");
+            }
+          })
+        }
+        wx.login({
+          success: function (res) {
+            console.log(res.code)
+            console.log(res)
+            //发送请求
+            wx.request({
+              url: 'http://localhost:8080/user/wx/login', //接口地址
+              data: {
+                code: res.code
+              },
+              header: {
+                'content-type': 'application/json' //默认值
+              },
+              success: function (res) {
+                console.log(res.data);
+                if (res.data.data.userName == null) {
+                  getApp().globalData.login_status = 1
+                  getApp().globalData.userid = res.data.userid
+                  wx.setStorageSync("userid", res.data.userid)
+
+                } else {
+                  getApp().globalData.login_status = 1
+                  getApp().globalData.user_address = res.data.data.userAddress
+                  getApp().globalData.user_icon = res.data.data.userInfo
+                  getApp().globalData.user_phone = res.data.data.userPhone.substring(0, 3) + '*****' + res.data.data.userPhone.substring(8, 3)
+                  getApp().globalData.user_name = res.data.data.userName
+                  getApp().globalData.wx_id = res.data.data.wxId
+                  //将用户的信息保存到手机存储卡中
+                  wx.setStorageSync("login_status", 1)
+                  wx.setStorageSync("user_address", res.data.data.userAddress)
+                  wx.setStorageSync("user_icon", res.data.data.userInfo)
+                  wx.setStorageSync("user_phone", res.data.data.userPhone.substring(0, 3) + '*****' + res.data.data.userPhone.substring(8, 11))
+                  wx.setStorageSync("user_name", res.data.data.userName)
+                  wx.setStorageSync("wx_id", res.data.data.wxId)
+                  console.log("true");
+                  wx.switchTab({
+                    url: '/pages/home/home',
+                  })
+                }
+              }
+            })
+          }
+        })
+      }, fail(res) {
+        console.log("error");
+      }
+    })
+  },
+
+
   //处理login的触发事件
   login: function (e) {
     if (this.data.account == ''|| this.data.password==''){
