@@ -1,17 +1,18 @@
-<!--miniprogram/pages/home/login/login-other/login-wx.wxml-->
-<text>miniprogram/pages/home/login/login-other/login-wx.wxml</text>
-<view open-type="getUserInfo"></view>
-
-<button bindtap='login'>登录</button>
-<button />
-
-<open-data type="userAvatarUrl"></open-data>
-<open-data type="userNickName"></open-data>
-<!-- 需要使用 button 来授权登录 -->
-<button
-  open-type="getUserInfo"
-  bindgetuserinfo="bindGetUserInfo"
->
-  授权登录
-</button>
-<view >请升级微信版本</view>
+<!--miniprogram/pages/home/login/login-other/login-other.wxml-->
+<view class='top'>
+  <view class='person'>
+    <image src='/images/adm.png' class='adm-png'></image>
+    <view class='name'>名字</view>
+  </view>
+</view>
+<view class='bottom'>
+  <view class='login'>
+    <view class='login-text'>登录后该应用将获得以下权限</view>
+    <view class='login-check'>
+      <image src='/images/hook.png' class='hook-png'></image>
+      <view class='check-text'>获得你的公开信息（昵称，头像等）</view>
+    </view>
+  </view>
+    <button class='btn1' open-type="getUserInfo" bindtap='bindWx'>确认登录
+  </button>
+</view>

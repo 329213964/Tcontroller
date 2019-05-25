@@ -132,5 +132,10 @@ Page({
     wx.navigateTo({
       url: '/pages/home/home',
     })
+  },
+  bindWx:function(e){
+    wx.navigateTo({
+      url: '/pages/home/login/login-other/login-wx',
+    })
   }
 })

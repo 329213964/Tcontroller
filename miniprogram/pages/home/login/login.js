@@ -81,6 +81,8 @@ Page({
           getApp().globalData.user_phone = res.data.userPhone.substring(0, 3) + '*****' + res.data.userPhone.substring(8, 3)
           getApp().globalData.user_name = res.data.userName
           getApp().globalData.wx_id = res.data.wxId
+          getApp().globalData.userid = res.data.userid
+          wx.setStorageSync("userid", res.data.userid);
           //将用户的信息保存到手机存储卡中
           wx.setStorageSync("login_status",1)
           wx.setStorageSync("user_icon", res.data.userInfo)
