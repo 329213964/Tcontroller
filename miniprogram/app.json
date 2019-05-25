@@ -1,11 +1,15 @@
 {
   "pages": [
-    "pages/home/login/login-other/login-other",
-    "pages/info/changesecond/changesecond",
+    "pages/home/home",
     "pages/info/changefirst/changefirst",
+    "pages/info/changesecond/changesecond",
+    
+    "pages/home/login/login-other/login-other",
+    
+    
     "pages/home/guarantee/guarantee",
 
-    "pages/home/home",
+    
     "pages/home/login/login-other/login-wx",
     "pages/info/info",
     "pages/home/register/register",
