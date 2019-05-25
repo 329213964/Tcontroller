@@ -1,10 +1,14 @@
 {
   "pages": [
-    "pages/home/forgetfourth/forgetfourth",
-    "pages/home/forgetthird/forgetthird",
-    "pages/home/forgetsecond/forgetsecond",
-    "pages/home/forgetfirst/forget",
+
     "pages/home/success/success",
+    "pages/home/forgetfirst/forget",
+    "pages/home/forgetsecond/forgetsecond",
+    "pages/home/forgetthird/forgetthird",
+    "pages/home/forgetfourth/forgetfourth",
+    
+   
+    
     "pages/info/changethird/changethird",
     "pages/home/login/login-other/login-other",
     "pages/info/changesecond/changesecond",
