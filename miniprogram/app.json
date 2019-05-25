@@ -1,17 +1,10 @@
 {
   "pages": [
-      "pages/home/forgetfourth/forgetfourth",
-    "pages/home/forgetthird/forgetthird",
-    "pages/home/forgetsecond/forgetsecond",
-    "pages/home/forgetfirst/forget",
-   
-    
-    "pages/home/success/success",
-    "pages/info/changethird/changethird",
     "pages/home/login/login-other/login-other",
     "pages/info/changesecond/changesecond",
     "pages/info/changefirst/changefirst",
     "pages/home/guarantee/guarantee",
+
     "pages/home/home",
     "pages/home/login/login-other/login-wx",
     "pages/info/info",
@@ -19,9 +12,10 @@
     "pages/home/phone/phone",
     "pages/employ/employ",
     "pages/home/login/login",
+    "pages/home/forget/forget",
     "pages/home/advertise/advertise",
     "pages/home/advertise/advertise-info/advertise-info"
-  
+
   ],
   "window": {
     "backgroundTextStyle": "light",
