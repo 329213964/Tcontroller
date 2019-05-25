@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/home/success/success",
+    "pages/info/changethird/changethird",
     "pages/home/login/login-other/login-other",
     "pages/info/changesecond/changesecond",
     "pages/info/changefirst/changefirst",
@@ -13,7 +15,7 @@
     "pages/home/forget/forget",
     "pages/home/advertise/advertise",
     "pages/home/advertise/advertise-info/advertise-info"
-
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
