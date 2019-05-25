@@ -1,20 +1,19 @@
 {
   "pages": [
-
-    "pages/info/changesecond/changesecond",
+    
+    
     "pages/home/home",
     "pages/home/success/success",
     "pages/home/forgetfirst/forget",
     "pages/home/forgetsecond/forgetsecond",
     "pages/home/forgetthird/forgetthird",
     "pages/home/forgetfourth/forgetfourth",
-    
-    "pages/info/changethird/changethird",
-    "pages/home/login/login-other/login-other",
-    
     "pages/info/changefirst/changefirst",
-    "pages/home/guarantee/guarantee",
+    "pages/info/changesecond/changesecond",
+    "pages/info/changethird/changethird",
     
+    "pages/home/login/login-other/login-other",
+    "pages/home/guarantee/guarantee",
     "pages/home/login/login-other/login-wx",
     "pages/info/info",
     "pages/home/register/register",

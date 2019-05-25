@@ -1,4 +1,4 @@
-// pages/info/changethird/changethird.js
+// miniprogram/pages/info/changethird/changethird.js
 Page({
 
   /**
