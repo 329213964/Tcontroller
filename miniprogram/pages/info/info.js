@@ -44,12 +44,10 @@ Page({
       var user_icon = myUtils.get("user_icon");
       var user_name = myUtils.get("user_name");
       var user_phone = myUtils.get("user_phone");
-      var user_address = myUtils.get("user_address");
       this.setData({
         user_name: user_name,
         user_phone: user_phone,
-        user_icon: user_icon,
-        user_address: user_address
+        user_icon: user_icon
       })
       var wx_status = myUtils.get("wx_id");
       if(wx_status!=null){

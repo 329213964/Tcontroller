@@ -1,6 +1,6 @@
 {
   "pages": [
-
+    "pages/home/home",
     "pages/home/success/success",
     "pages/home/forgetfirst/forget",
     "pages/home/forgetsecond/forgetsecond",
@@ -12,7 +12,7 @@
     "pages/info/changesecond/changesecond",
     "pages/info/changefirst/changefirst",
     "pages/home/guarantee/guarantee",
-    "pages/home/home",
+    
     "pages/home/login/login-other/login-wx",
     "pages/info/info",
     "pages/home/register/register",
