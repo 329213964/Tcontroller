@@ -1,4 +1,4 @@
-// pages/home/success/success.js
+// miniprogram/pages/home/success/success.js
 Page({
 
   /**
