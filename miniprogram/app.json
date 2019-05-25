@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/home/forget/forget",
     "pages/home/home",
     "pages/info/changefirst/changefirst",
     "pages/info/changesecond/changesecond",
@@ -15,7 +16,7 @@
     "pages/home/phone/phone",
     "pages/employ/employ",
     "pages/home/login/login",
-    "pages/home/forget/forget",
+    
     "pages/home/advertise/advertise",
     "pages/home/advertise/advertise-info/advertise-info"
 
