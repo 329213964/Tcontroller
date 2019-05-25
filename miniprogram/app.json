@@ -2,28 +2,32 @@
   "pages": [
 
     "pages/home/home",
-    "pages/home/forgetthird/forgetthird",
+      "pages/home/guarantee/guarantee",
+
+      "pages/home/advertise/advertise",
+      "pages/home/advertise/advertise-info/advertise-info",
+    
     "pages/home/forgetfirst/forget",
-    
-    "pages/home/advertise/advertise-info/advertise-info",
-    "pages/home/advertise/advertise",
-    
     "pages/home/forgetsecond/forgetsecond",
+    "pages/home/forgetthird/forgetthird",
     
-    "pages/home/forgetfourth/forgetfourth",
     "pages/info/changefirst/changefirst",
     "pages/info/changesecond/changesecond",
     "pages/info/changethird/changethird",
+    "pages/home/forgetfourth/forgetfourth",
+
     
-    "pages/home/success/success",
     "pages/home/login/login",
     "pages/home/login/login-other/login-other",
-    "pages/home/guarantee/guarantee",
     "pages/home/login/login-other/login-wx",
+    
+    
+    "pages/employ/employ",
+
     "pages/info/info",
     "pages/home/register/register",
     "pages/home/phone/phone",
-    "pages/employ/employ"
+    "pages/home/success/success"
     
 
   ],
