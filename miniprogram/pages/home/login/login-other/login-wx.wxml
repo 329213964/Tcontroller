@@ -1,0 +1,17 @@
+<!--miniprogram/pages/home/login/login-other/login-wx.wxml-->
+<text>miniprogram/pages/home/login/login-other/login-wx.wxml</text>
+<view open-type="getUserInfo"></view>
+
+<button bindtap='login'>登录</button>
+<button />
+
+<open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data>
+<!-- 需要使用 button 来授权登录 -->
+<button
+  open-type="getUserInfo"
+  bindgetuserinfo="bindGetUserInfo"
+>
+  授权登录
+</button>
+<view >请升级微信版本</view>

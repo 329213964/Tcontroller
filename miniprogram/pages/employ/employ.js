@@ -28,19 +28,14 @@ Page({
         console.log("调用API成功");
         console.log(res.data);
         if (res.data) {
-          wx.showToast({
-            title: '登陆成功',
-          })
-          
           that.setData({
             menu: res.data
           })
-          
         }
         else {
           wx.showModal({
             title: '提示',
-            content: '用户名或者密码错误',
+            content: '服务器繁忙',
             showCancel: false
           })
         }
@@ -87,7 +82,15 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    wx.showNavigationBarLoading() //在标题栏中显示加载
 
+    setTimeout(function () {
+
+      wx.hideNavigationBarLoading() //完成停止加载
+
+      wx.stopPullDownRefresh() //停止下拉刷新
+
+    }, 1500);
   },
 
   /**
