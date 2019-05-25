@@ -23,6 +23,11 @@ Page({
       url: '../register/register',
     })
   },
+  forget_href:function(e){
+    wx.navigateTo({
+      url: '../forgetfirst/forget',
+    })
+  },
   //处理pwdBlurt的触发事件
   pwdBlur: function (e) {
     var pwd = e.detail.value;//从页面获取到用户输入的密码

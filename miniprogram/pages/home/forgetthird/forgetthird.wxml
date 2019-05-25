@@ -29,7 +29,7 @@
   </view>
  
   <view class="hr"></view>
- <button class='btn1' bindtap=''>
+ <button class='btn1' bindtap='updatePwd'>
     <view>下一步</view>
   </button>
 

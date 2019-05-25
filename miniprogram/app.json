@@ -1,16 +1,21 @@
 {
   "pages": [
-    
+
     "pages/home/home",
-    "pages/home/success/success",
-    "pages/home/forgetfirst/forget",
-    "pages/home/forgetsecond/forgetsecond",
     "pages/home/forgetthird/forgetthird",
+    "pages/home/forgetfirst/forget",
+    
+    "pages/home/advertise/advertise-info/advertise-info",
+    "pages/home/advertise/advertise",
+    
+    "pages/home/forgetsecond/forgetsecond",
+    
     "pages/home/forgetfourth/forgetfourth",
     "pages/info/changefirst/changefirst",
     "pages/info/changesecond/changesecond",
     "pages/info/changethird/changethird",
     
+    "pages/home/success/success",
     "pages/home/login/login",
     "pages/home/login/login-other/login-other",
     "pages/home/guarantee/guarantee",
@@ -18,10 +23,8 @@
     "pages/info/info",
     "pages/home/register/register",
     "pages/home/phone/phone",
-    "pages/employ/employ",
+    "pages/employ/employ"
     
-    "pages/home/advertise/advertise",
-    "pages/home/advertise/advertise-info/advertise-info"
 
   ],
   "window": {
