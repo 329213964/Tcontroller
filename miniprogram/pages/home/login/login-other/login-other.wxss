@@ -2,7 +2,7 @@
 .top{
   width: 100%;
   height:150px;
-              
+  margin-top: 50px;
   
 }
 .adm-png{
