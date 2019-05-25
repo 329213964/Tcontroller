@@ -12,7 +12,8 @@ Page({
     user_name:"",
     user_phone:"",
     user_icon: "",
-    user_address: ""
+    user_address: "",
+    wx_status:0
   },
 
   /**
@@ -50,6 +51,12 @@ Page({
         user_icon: user_icon,
         user_address: user_address
       })
+      var wx_status = myUtils.get("wx_id");
+      if(wx_status!=null){
+        this.setData({
+          wx_status: 1
+        })
+      }
     }
     
     this.setData({
@@ -103,6 +110,7 @@ Page({
 
   loggout:function(e){
     this.setData({
+      wx_status:0,
       login_status: 0,
       user_name: "",
       user_phone: "",
@@ -115,12 +123,14 @@ Page({
     getApp().globalData.user_icon = ""
     getApp().globalData.user_phone = ""
     getApp().globalData.user_name = ""
+    getApp().globalData.wx_id=null
     //将用户的信息保存到手机存储卡中
     wx.setStorageSync("login_status", 0)
     wx.setStorageSync("user_address", "")
     wx.setStorageSync("user_icon", "")
     wx.setStorageSync("user_phone", "")
     wx.setStorageSync("user_name", "")
+    wx.setStorageSync("wx_id", "")
     wx.navigateTo({
       url: '/pages/home/home',
     })

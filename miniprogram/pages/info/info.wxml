@@ -7,18 +7,25 @@
   <button class="btn" bindtap='login_href' type="primary" style='margin-top:60px;'>登 录</button>
 </view>
 <view wx:if='{{login_status==1}}'>
-  <view class='imgdiv'>
+  <view class='imgdiv1'>
     <image src='/images/{{user_icon}}.png' class='adm-png'></image>
     <text style='color:#8a8a8a'>{{user_name}}</text>
   </view>
-  <view class='address-div' style='margin-top:20px'>
+  <view class='address-div' style='margin-top:20px' hover-class='address-div-click'>
     <text class='address-div-text'>联系地址</text>
     <image class='arrow_right' src='/images/arrow_right.png'></image>
   </view>
-  <view class='address-div'>
+  <view class='address-div' hover-class='address-div-click'>
+    <image class='info_mini_icon' src='/images/phone-mini.png'></image>
     <text class='address-div-text'>手机绑定</text>
     <image class='arrow_right' src='/images/arrow_right.png'></image>
     <text class='phoneNum'>{{user_phone}}</text>
+  </view>
+  <view class='address-div' hover-class='address-div-click'>
+  <image class='info_mini_icon' src='/images/wechat-mini.png'></image>
+    <text class='address-div-text'>微信绑定</text>
+    <image class='arrow_right' src='/images/arrow_right.png' wx:if='{{wx_status==0}}'></image>
+    <open-data type="userNickName" class='phoneNum' wx:if='{{wx_status==1}}'></open-data>
   </view>
   <button class="loggout-btn" hover-class='loggout-btn-click' bindtap='loggout' style='margin-top:60px;'>注 销</button>
  </view>
