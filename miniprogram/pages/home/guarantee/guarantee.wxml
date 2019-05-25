@@ -1,0 +1,22 @@
+<!--miniprogram/pages/home/guarantee/guarantee.wxml-->
+      
+<view class="content">
+  <view class="address">
+    <view class="address-title">地址</view>
+    <view class="num"><input bindinput="addressInput" placeholder="详细地址(精确到寝室)" placeholder-style="color:#999999;"/></view>
+  </view>
+  <view class="hr"></view>
+   
+  <view class="info">
+    <view class="fault-info">故障描述</view>
+    <view class='text_box'>
+      <textarea fixed='true' bindinput="infoInput" contenteditable="true" contenteditable="true"  class='weui-textarea' name='commentValue' placeholder='请输入故障描述（不超过200字）' placeholder-style='font-size:35rpx;' maxlength='{{maxTextLen}}' style='background-color: white'></textarea>
+      <view class='text-count-display f f-end'>{{textLen}}/{{maxTextLen}}</view>
+    </view>
+  </view>
+  <button class='btn1' bindtap=''>
+    <view>报修</view>
+  </button>
+
+
+  </view>
