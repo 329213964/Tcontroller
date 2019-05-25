@@ -205,7 +205,7 @@ Page({
 
     if (verifyCode == iscode) {
       wx.request({
-        url: 'http://localhost:8080/user/bindPhoneNum',
+        url: 'https://fix.foxcii.com/user/bindPhoneNum',
         //定义传到后台的数据
         data: {
           //从全局变量data中获取数据

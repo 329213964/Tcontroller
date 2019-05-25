@@ -121,6 +121,8 @@ Page({
     getApp().globalData.user_icon = ""
     getApp().globalData.user_phone = ""
     getApp().globalData.user_name = ""
+    getApp().globalData.userid = ""
+    getApp().globalData.user_phone_true = ""
     getApp().globalData.wx_id=null
     //将用户的信息保存到手机存储卡中
     wx.setStorageSync("login_status", 0)
@@ -128,7 +130,9 @@ Page({
     wx.setStorageSync("user_icon", "")
     wx.setStorageSync("user_phone", "")
     wx.setStorageSync("user_name", "")
-    wx.setStorageSync("wx_id", "")
+    wx.setStorageSync("userid","")
+    wx.setStorageSync("user_phone_true", "")
+    wx.setStorageSync("wx_id",null)
     wx.navigateTo({
       url: '/pages/home/home',
     })

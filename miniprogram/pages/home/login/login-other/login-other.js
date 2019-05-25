@@ -83,7 +83,7 @@ Page({
             console.log(res)
             //发送请求
             wx.request({
-              url: 'http://localhost:8080/user/wx/login', //接口地址
+              url: 'https://fix.foxcii.com/user/wx/login', //接口地址
               data: {
                 code: res.code
               },

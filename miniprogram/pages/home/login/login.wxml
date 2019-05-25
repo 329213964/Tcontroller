@@ -19,8 +19,6 @@
     <view>登录</view>
  </button>
  <!-- <view class='otherindex' style='text-decoration:underline'>社交帐号登录</view> -->
- <image src='/images/wechat1.png' class='toy' bindtap='wxlogin'></image>
- <image src='/images/sina.png' class='toy'></image>
- <image src='/images/qq.png' class='toy'></image>
+ <view style='display:flex;justify-content: center;'><image src='/images/wechat1.png' class='toy' bindtap='wxlogin'></image></view>
 </view>
 

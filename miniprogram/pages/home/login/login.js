@@ -49,7 +49,7 @@ Page({
     }
     
     wx.request({
-      url: 'http://localhost:8080/user/login',//后面详细介绍
+      url: 'https://fix.foxcii.com/user/login',//后面详细介绍
       //定义传到后台的数据
       data: {
         //从全局变量data中获取数据

@@ -181,7 +181,7 @@ Page({
     var verifyCode = e.detail.value.verifyCode;
     var iscode = this.data.iscode;
     var userid = myUtils.get("userid");
-    if (verifyCode == iscode ) {
+    if (verifyCode == iscode &verifyCode!="") {
       wx.redirectTo({
         url: '../changesecond/changesecond',
       })

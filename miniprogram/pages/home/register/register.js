@@ -121,9 +121,9 @@ Page({
       return;
     }
     var userid = myUtils.get("userid");
-    if (userid==""){
+    if (userid==""||userid==null){
       wx.request({
-        url: 'http://localhost:8080/user/register',
+        url: 'https://fix.foxcii.com/user/register',
         //定义传到后台的数据
         data: {
           //从全局变量data中获取数据
@@ -168,7 +168,7 @@ Page({
       })
     }else{
       wx.request({
-        url: 'http://localhost:8080/user/registerByUserid',
+        url: 'https://fix.foxcii.com/user/registerByUserid',
         //定义传到后台的数据
         data: {
           //从全局变量data中获取数据
@@ -199,7 +199,8 @@ Page({
           } else {
             //-------------- 注册成功，获得的注册信息进行相应处理--------------
 
-
+            getApp().globalData.userid = res.data.userid
+            wx.setStorageSync("userid", res.data.userid);
             // -------------------------------------------------------------
             wx.redirectTo({
               url: '../phone/phone'　　// 注册成功，跳转到绑定页面

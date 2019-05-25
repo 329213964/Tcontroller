@@ -89,7 +89,7 @@ Page({
             //发送请求
             var userid = myUtils.get("userid");
             wx.request({
-              url: 'http://localhost:8080/user/wx/bind', //接口地址
+              url: 'https://fix.foxcii.com/user/wx/bind', //接口地址
               data: {
                 userid:userid,
                 code: res.code

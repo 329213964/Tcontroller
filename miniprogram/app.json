@@ -11,6 +11,7 @@
     "pages/info/changesecond/changesecond",
     "pages/info/changethird/changethird",
     
+    "pages/home/login/login",
     "pages/home/login/login-other/login-other",
     "pages/home/guarantee/guarantee",
     "pages/home/login/login-other/login-wx",
@@ -18,7 +19,7 @@
     "pages/home/register/register",
     "pages/home/phone/phone",
     "pages/employ/employ",
-    "pages/home/login/login",
+    
     "pages/home/advertise/advertise",
     "pages/home/advertise/advertise-info/advertise-info"
 
