@@ -15,7 +15,7 @@
     <text class='address-div-text'>联系地址</text>
     <image class='arrow_right' src='/images/arrow_right.png'></image>
   </view>
-  <view class='address-div' hover-class='address-div-click'>
+  <view class='address-div' hover-class='address-div-click' bindtap='changePhone'>
     <image class='info_mini_icon' src='/images/phone-mini.png'></image>
     <text class='address-div-text'>手机绑定</text>
     <image class='arrow_right' src='/images/arrow_right.png'></image>

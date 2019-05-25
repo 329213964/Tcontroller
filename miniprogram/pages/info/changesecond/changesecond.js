@@ -1,4 +1,6 @@
 // miniprogram/pages/info/changesecond/changesecond.js
+var myUtils = require("../../../utils/myUtils.js")
+
 Page({
 
   /**
@@ -12,7 +14,8 @@ Page({
     isnum: 'weui-vcode-btn',
     isnumtext: '获取验证码',
     cooldownNum: 60,
-    timer: 'cd'
+    timer: 'cd',
+    iscode:''
   },
 
   /**
@@ -88,43 +91,66 @@ Page({
   genVerifyCode: function () {
     if (this.data.isclick) return;
 
-    this.cooldown()
+    
     //获取国家代码的索引
     var index = this.data.countryCodeIndex;
     //根据索引取值
     var countryCode = this.data.countryCodes[index];
     //获取输入的手机号
-    var phoneNum = this.data.phoneNum;
+    var phoneNum =this.data.phoneNum;
     // console.log(countryCode,phoneNum) 
     //想后台发送请求
+    if (this.data.phoneNum==""){
+      wx.showModal({
+        title: '提示',
+        content: '请输入手机',
+        showCancel: false
+      })
+      return;
+    }
+    var iscode = '';
+    iscode = iscode + Math.floor(Math.random() * 10);
+    iscode = iscode + Math.floor(Math.random() * 10);
+    iscode = iscode + Math.floor(Math.random() * 10);
+    iscode = iscode + Math.floor(Math.random() * 10);
     wx.request({
       //小程序访问的网络请求协议必须是https，url里面不能有端口号
-      url: "http://localhost:8080/user/genCode",
+      url: "https://v.juhe.cn/sms/send",
       //传递的参数
       data: {
-        countryCode: countryCode,
-        phoneNum: phoneNum
+        mobile: phoneNum,
+        tpl_id: 122680,
+        tpl_value: '%23code%23%3D' + iscode,
+        type: '',
+        key: '4493b3bf7cc88395f59b6b6c6fca181e'
       },
       //发送请求的方式
       method: 'GET',
       success: function (res) {
+        if (res.data.error_code == 205401) {
+          wx.showModal({
+            title: '提示',
+            content: '手机号不正确',
+            showCancel: false
+          })
+          return;
+        }
         wx.showToast({
           title: '已发送，请查收!',
           duration: 2000,
 
         })
-
-        // console.log(res)
+        console.log(res)
       }
 
     })
-
+    this.cooldown()
     this.setData({
+      iscode: iscode,
       isclick: true,
       isnum: 'weui-vcode-btn-clicked',
       isnumtext: '已发送(' + this.data.cooldownNum + 's)'
     })
-
 
 
 
@@ -158,70 +184,81 @@ Page({
   formSubmit: function (e) {
     var phoneNum = e.detail.value.phoneNum;
     var verifyCode = e.detail.value.verifyCode;
-    //向后台发送请求，进行校验
-    wx.request({
-      url: 'http://localhost:8080/user/verify',
-      //POST的请求头是application/json，未来后台可以接收对应的参数，改变请求头
-      method: "POST",
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: {
-        phoneNum: phoneNum,
-        verifyCode: verifyCode
-      },
+    var iscode = this.data.iscode;
+    var userid = myUtils.get("userid");
 
+    if(phoneNum==""){
+      wx.showModal({
+        title: '提示',
+        content: '请输入手机号',
+        showCancel: false
+      })
+      return;
+    }else if(verifyCode==""){
+      wx.showModal({
+        title: '提示',
+        content: '请输入验证码',
+        showCancel: false
+      })
+      return;
+    }
 
-      success: function (res) {
-        if (res.data) {
-          wx.request({
-            url: 'http://localhost:8080/user/register',
-            method: "POST",
-            // header: {
-            //   'content-type': 'application/x-www-form-urlencoded'
-            // },
-            data: {
-              phoneNum: phoneNum,
-              regDate: new Date(),
-              status: 1
-            },
-            //用户信息保存成功，页面跳转（充值押金）
-            success: function (res) {
+    if (verifyCode == iscode) {
+      wx.request({
+        url: 'http://localhost:8080/user/bindPhoneNum',
+        //定义传到后台的数据
+        data: {
+          //从全局变量data中获取数据
+          userid: userid,
+          userPhone: phoneNum
+        },
+        method: 'get',//定义传到后台接受的是post方法还是get方法
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success: function (res) {
+          console.log("调用API成功");
+          if (res.data.userid == -1) {
+            wx.showModal({
+              title: '提示',
+              content: '手机号已被注册',
+              showCancel: false
+            })
+            return;
+          } else if (res.data.userid == null) {
+            wx.showModal({
+              title: '提示',
+              content: '服务器繁忙，请稍后重试',
+              showCancel: false
+            })
+            return;
+          } else {
+            //-------------- 手机号绑定成功，获得的注册信息进行相应处理--------------
+            getApp().globalData.user_phone = res.data.userPhone.substring(0, 3) + '*****' + res.data.userPhone.substring(8, 3)
+            getApp().globalData.user_phone_true = res.data.userPhone
+            wx.setStorageSync("user_phone", res.data.userPhone.substring(0, 3) + '*****' + res.data.userPhone.substring(8, 11))
+            wx.setStorageSync("user_phone_true", res.data.userPhone)
 
-              if (res.data) {
-                //跳转
-                wx.navigateTo({
-                  url: '../deposite/deposite',
-                })
-                // 记录用户信息 
-                // 0 未注册 1 绑定 2实名认证
-                //更新getApp().globalData中的数据，是更新内存中的数据
-                getApp().globalData.status = 1
-                getApp().globalData.phoneNum = phoneNum
-                //将用户的信息保存到手机存储卡中
-                wx.setStorageSync("status", 1)
-                wx.setStorageSync("phoneNum", phoneNum)
-              } else {//用户信息保存失败
-                wx.showModal({
-                  title: '提示',
-                  content: '服务端错误，请稍后再试',
+            // -------------------------------------------------------------
+            wx.redirectTo({
+              url: '../changethird/changethird'　　// 手机号绑定成功，跳转到页面
+            })
 
-                })
-              }
+          }
 
-            }
-
-
-          })
-        } else {
-          wx.showModal({
-            title: '提示',
-            content: '输入的验证码有误！',
-            showCancel: false
-          })
+        },
+        fail: function (res) {
+          console.log("调用API失败");
         }
-      }
-    })
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '输入的验证码有误！',
+        showCancel: false
+      })
+    }
+
   }
 
 

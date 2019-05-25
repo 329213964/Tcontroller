@@ -137,5 +137,10 @@ Page({
     wx.navigateTo({
       url: '/pages/home/login/login-other/login-wx',
     })
+  },
+  changePhone:function(e){
+    wx.navigateTo({
+      url: '/pages/info/changefirst/changefirst',
+    })
   }
 })

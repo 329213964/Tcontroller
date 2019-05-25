@@ -15,9 +15,7 @@
       <image class='success-png' src='/images/success.png'></image>
       <view class='success-text'>恭喜您,换绑成功!</view>
     </view>
-     <button class='btn1' bindtap=''>
-    <view>完成绑定</view>
-  </button>
+     <button class='btn1' bindtap='bindok'>完成绑定</button>
     
 </view>
 

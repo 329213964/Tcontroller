@@ -62,5 +62,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  bindok:function(e){
+    wx.switchTab({
+      url: '/pages/info/info',
+    })
   }
 })

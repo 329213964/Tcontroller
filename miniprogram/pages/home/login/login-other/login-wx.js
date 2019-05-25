@@ -124,13 +124,17 @@ Page({
                   getApp().globalData.user_address = res.data.data.userAddress
                   getApp().globalData.user_icon = res.data.data.userInfo
                   getApp().globalData.user_phone = res.data.data.userPhone.substring(0, 3) + '*****' + res.data.data.userPhone.substring(8, 3)
+                  getApp().globalData.user_phone_true = res.data.data.userPhone
                   getApp().globalData.user_name = res.data.data.userName
                   getApp().globalData.wx_id = res.data.data.wxId
+                  getApp().globalData.userid = res.data.userid
+                  wx.setStorageSync("userid", res.data.userid);
                   //将用户的信息保存到手机存储卡中
                   wx.setStorageSync("login_status", 1)
                   wx.setStorageSync("user_address", res.data.data.userAddress)
                   wx.setStorageSync("user_icon", res.data.data.userInfo)
                   wx.setStorageSync("user_phone", res.data.data.userPhone.substring(0, 3) + '*****' + res.data.data.userPhone.substring(8, 11))
+                  wx.setStorageSync("user_phone_true", res.data.data.userPhone)
                   wx.setStorageSync("user_name", res.data.data.userName)
                   wx.setStorageSync("wx_id", res.data.data.wxId)
                   console.log("true");
