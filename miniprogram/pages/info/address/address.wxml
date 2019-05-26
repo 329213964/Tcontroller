@@ -1,0 +1,11 @@
+<!--miniprogram/pages/info/address/address.wxml-->
+<view class='top'>
+  <view class='left'>
+    <view class='address'>朝阳新街87号</view>
+    <view class='addressdetaile'>发拉丽会所</view>
+  </view>
+  <image src='/images/revise.png' class='right'></image>
+</view>
+ <view class="hr"></view>
+<image class='add' src='/images/add.png'></image>
+ <view class="hr2"></view>

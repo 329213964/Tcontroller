@@ -1,12 +1,14 @@
 {
   "pages": [
+    "pages/info/changeaddress/changeaddress",
+    "pages/home/register/register",
+   
+    "pages/info/address/address",
     "pages/home/login/login",
     "pages/home/forgetfourth/forgetfourth",
     "pages/home/forgetthird/forgetthird",
     "pages/home/forgetsecond/forgetsecond",
     "pages/home/forgetfirst/forget",
-   
-    
     "pages/home/success/success",
     "pages/info/changethird/changethird",
     "pages/home/login/login-other/login-other",
@@ -16,13 +18,12 @@
     "pages/home/home",
     "pages/home/login/login-other/login-wx",
     "pages/info/info",
-    "pages/home/register/register",
+   
     "pages/home/phone/phone",
     "pages/employ/employ",
-    
     "pages/home/advertise/advertise",
     "pages/home/advertise/advertise-info/advertise-info"
-  
+   
   ],
   "window": {
     "backgroundTextStyle": "light",

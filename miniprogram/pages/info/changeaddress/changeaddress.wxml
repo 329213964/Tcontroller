@@ -1,0 +1,20 @@
+<!--miniprogram/pages/info/changeaddress/changeaddress.wxml-->
+<view class='top'>
+  <view class='left'>
+    <view class='address'>
+      <input bindinput="" placeholder="地址" placeholder-style="color:#999999;"/>
+       <view class='hr3'></view>
+    </view>
+   
+    <view class='addressdetaile'>
+      <input bindinput="" placeholder="详细地址" placeholder-style="color:#999999;"/>
+      <view class='hr3'></view>
+    </view>
+    
+  </view>
+  <!-- <image src='/images/revise.png' class='right'></image> -->
+</view>
+ <view class="hr"></view>
+<button class='btn1' bindtap=''>
+    <view>保存</view>
+  </button>
