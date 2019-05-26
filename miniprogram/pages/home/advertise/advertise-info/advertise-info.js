@@ -1,4 +1,5 @@
 const app = getApp();
+var myUtils = require("../../../../utils/myUtils.js")
 Page({
   data: {
     //article将用来存储towxml数据
@@ -6,10 +7,10 @@ Page({
   },
   onLoad: function () {
     const _ts = this;
-
+    var mdfile=myUtils.get("knowName");
     //请求markdown文件，并转换为内容
     wx.request({
-      url: 'https://raw.githubusercontent.com/329213964/329213964.github.io/master/_posts/2019-5-21-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA.md',
+      url: 'https://raw.githubusercontent.com/329213964/Tcontroller/master/miniprogram/posts/'+mdfile,
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
@@ -33,6 +34,8 @@ Page({
         _ts.setData({
           article: data
         });
+        getApp().globalData.knowName = null;
+        wx.setStorageSync("knowName", null);
       }
     });
   }

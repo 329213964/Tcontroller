@@ -64,7 +64,7 @@
   /* margin-top: 5px; */
   display:flex;
   flex-direction: row;
-  padding: 20px;
+  padding: 10px;
   box-shadow:3rpx 3rpx 3rpx 3rpx rebeccapurple inset;
   background-color: #5bbfe71f;
 }
