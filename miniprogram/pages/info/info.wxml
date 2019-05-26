@@ -12,7 +12,7 @@
     <open-data type="userAvatarUrl" wx:if='{{wx_status==1}}'  class='adm-png-1'></open-data>
     <text style='color:#8a8a8a'>{{user_name}}</text>
   </view>
-  <view class='address-div' style='margin-top:20px' hover-class='address-div-click'>
+  <view class='address-div' style='margin-top:20px' hover-class='address-div-click' bindtap='changeAddress'>
     <text class='address-div-text'>联系地址</text>
     <image class='arrow_right' src='/images/arrow_right.png'></image>
   </view>

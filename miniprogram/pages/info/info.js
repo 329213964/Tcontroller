@@ -146,5 +146,10 @@ Page({
     wx.navigateTo({
       url: '/pages/info/changefirst/changefirst',
     })
+  },
+  changeAddress:function(e){
+    wx.navigateTo({
+      url: '/pages/info/address/address',
+    })
   }
 })

@@ -1,11 +1,12 @@
 // miniprogram/pages/info/address/address.js
+var myUtils = require("../../../utils/myUtils.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    addresslist: []
   },
 
   /**
@@ -19,7 +20,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    var dateList = myUtils.get("user_address").split("|");
+    var arr = []
+    for (var i in dateList) {
+      arr = arr.concat(dateList[i]);
+      console.log(arr)
+    }
+    this.setData({
+      addresslist: arr
+    })
   },
 
   /**
