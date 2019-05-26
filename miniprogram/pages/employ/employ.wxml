@@ -13,7 +13,7 @@
       <view data-supplierid="100020" data-key="" class="bus-list-item  ">
         <view class="bus-time">{{item.employTime}}</view>
         <!-- tobooking监听 -->
-        <view class="tobooking" bindtap='orderin'> 详情 </view>
+        <view class="tobooking" bindtap='orderin' data-employid='{{item.employid}}'> 详情 </view>
         <view class="detail">
           <view class="detail1">
             <view class="start">

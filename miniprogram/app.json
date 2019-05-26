@@ -1,35 +1,28 @@
 {
   "pages": [
-"pages/employ/employ",
-      "pages/home/home",
-      "pages/home/guarantee/guarantee",
 
-      "pages/home/advertise/advertise",
-      "pages/home/advertise/advertise-info/advertise-info",
-    
+
+    "pages/home/home",
+    "pages/home/guarantee/guarantee",
+    "pages/home/advertise/advertise",
+    "pages/home/advertise/advertise-info/advertise-info",
     "pages/home/forgetfirst/forget",
     "pages/home/forgetsecond/forgetsecond",
     "pages/home/forgetthird/forgetthird",
-    
     "pages/info/changefirst/changefirst",
     "pages/info/changesecond/changesecond",
     "pages/info/changethird/changethird",
     "pages/home/forgetfourth/forgetfourth",
-
-    
     "pages/home/login/login",
     "pages/home/login/login-other/login-other",
     "pages/home/login/login-other/login-wx",
-    
-    
-    
-
+    "pages/employ/employ",
+    "pages/employ/fix/fix",
     "pages/info/info",
     "pages/home/register/register",
     "pages/home/phone/phone",
     "pages/home/success/success"
     
-
   ],
   "window": {
     "backgroundTextStyle": "light",

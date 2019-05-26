@@ -69,7 +69,7 @@
   background-color: #5bbfe71f;
 }
 .k{
-  width: 200px;
+  width: 60%;
   /* flex-direction: column; */
 }
 .home-png{
@@ -115,7 +115,9 @@
 .middle{
   width: 100%;
   height: 80px;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
+  justify-content:center; 
 }
 
 .guarantee{
@@ -134,11 +136,10 @@
   margin-left: 10px;
 }
 .subgroup-guarantee{
-  
-  width: 70px;
   height: 70px;
-  position:absolute;
+  float: left;
   left: 55px;
+  margin-right: 15%;
   /* padding-left: 10px; */
   display: flex;
   flex-direction: column; 
@@ -153,11 +154,9 @@
 
 }
 .subgroup-chat{
-  width: 70px;
   height: 70px;
-  position:absolute;
-  left: 155px;
   display: flex;
+  align-items: center;
   flex-direction: column; 
   
 }
@@ -169,11 +168,9 @@
   margin-top: 10px;
 }
 .subgroup-about{
-  width: 70px;
   height: 70px;
-  position:absolute;
-  left: 255px;
-  padding-left: 10px;
+  float: right;
+  margin-left: 15%;
   display: flex;
   flex-direction: column; 
   

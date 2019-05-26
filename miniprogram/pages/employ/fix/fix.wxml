@@ -1,0 +1,40 @@
+
+<view class='conteiner'>
+
+  <view class='admint'>
+    <label class='lab'>订单详情</label> 
+    
+  </view>
+
+  <view class='box'>
+
+    <scroll-view class='orid' scroll-y style="height: 100%">
+      <view class='onid'>
+        <view class='inorid'>
+
+          <label class='tex'>订单号:<text>{{employid}}</text></label>
+
+          <label class='tex'>订单时间:<text>{{employTime}}</text></label>
+
+          <label class='tex'>订单状态:
+              <text wx:if="{{employStatus==0}}">已提交</text>
+              <text wx:if="{{employStatus==1}}">维修中</text>
+              <text wx:if="{{employStatus==2}}">已完成</text>
+          </label>
+
+          <label class='tex'>工人ID:<text>{{fixid}}</text></label>
+
+          <label class='tex'>工人名称:<text>{{fixName}}</text></label>
+
+          <label class='tex'>联系方式:<text>{{fixPhone}}</text></label>
+
+          <label class='tex'>地址:<text>{{address}}</text></label>
+
+          <label class='tex'>简介:<text>{{info}}</text></label>
+
+        </view>
+      </view>
+      
+    </scroll-view>
+  </view> 
+</view>
