@@ -1,6 +1,6 @@
 // pages/register/register.js
 
-
+var myUtils = require("../../../utils/myUtils.js")
 Page({
 
   /**
@@ -120,49 +120,99 @@ Page({
       })
       return;
     }
-    wx.request({
-      url: 'http://localhost:8080/user/register',
-      //定义传到后台的数据
-      data: {
-        //从全局变量data中获取数据
-        userName: this.data.account,
-        userPwd:this.data.checkpassword
-      },
-      method: 'get',//定义传到后台接受的是post方法还是get方法
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        console.log("调用API成功");
-        if(res.data.userid==-1){
-          wx.showModal({
-            title: '提示',
-            content: '用户名已被注册',
-            showCancel: false
-          })
-          return;
-        } else if (res.data.userid == null){
-          wx.showModal({
-            title: '提示',
-            content: '服务器繁忙，请稍后重试',
-            showCancel: false
-          })
-          return;
-        }else{
-          //-------------- 注册成功，获得的注册信息进行相应处理--------------
+    var userid = myUtils.get("userid");
+    if (userid==""||userid==null){
+      wx.request({
+        url: 'https://fix.foxcii.com/user/register',
+        //定义传到后台的数据
+        data: {
+          //从全局变量data中获取数据
+          userName: this.data.account,
+          userPwd: this.data.checkpassword
+        },
+        method: 'get',//定义传到后台接受的是post方法还是get方法
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success: function (res) {
+          console.log("调用API成功");
+          if (res.data.userid == -1) {
+            wx.showModal({
+              title: '提示',
+              content: '用户名已被注册',
+              showCancel: false
+            })
+            return;
+          } else if (res.data.userid == null) {
+            wx.showModal({
+              title: '提示',
+              content: '服务器繁忙，请稍后重试',
+              showCancel: false
+            })
+            return;
+          } else {
+            //-------------- 注册成功，获得的注册信息进行相应处理--------------
 
 
-          // -------------------------------------------------------------
-          wx.redirectTo({
-            url: '../phone/phone'　　// 注册成功，跳转到绑定页面
-          })
-          
+            // -------------------------------------------------------------
+            wx.redirectTo({
+              url: '../phone/phone'　　// 注册成功，跳转到绑定页面
+            })
+
+          }
+
+        },
+        fail: function (res) {
+          console.log("调用API失败");
         }
-        
-      },
-      fail: function (res) {
-        console.log("调用API失败");
-      }
-    })
+      })
+    }else{
+      wx.request({
+        url: 'https://fix.foxcii.com/user/registerByUserid',
+        //定义传到后台的数据
+        data: {
+          //从全局变量data中获取数据
+          userid:userid,
+          userName: this.data.account,
+          userPwd: this.data.checkpassword
+        },
+        method: 'get',//定义传到后台接受的是post方法还是get方法
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success: function (res) {
+          console.log("调用API成功");
+          if (res.data.userid == -1) {
+            wx.showModal({
+              title: '提示',
+              content: '用户名已被注册',
+              showCancel: false
+            })
+            return;
+          } else if (res.data.userid == null) {
+            wx.showModal({
+              title: '提示',
+              content: '服务器繁忙，请稍后重试',
+              showCancel: false
+            })
+            return;
+          } else {
+            //-------------- 注册成功，获得的注册信息进行相应处理--------------
+
+            getApp().globalData.userid = res.data.userid
+            wx.setStorageSync("userid", res.data.userid);
+            // -------------------------------------------------------------
+            wx.redirectTo({
+              url: '../phone/phone'　　// 注册成功，跳转到绑定页面
+            })
+
+          }
+
+        },
+        fail: function (res) {
+          console.log("调用API失败");
+        }
+      })
+    }
   }
 })

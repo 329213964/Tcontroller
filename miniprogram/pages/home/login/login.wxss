@@ -64,11 +64,9 @@
 
 .toy{
   padding-top: 10px;
-  margin-right: 8rpx;
   width: 46rpx;
   height: 46rpx;
   position: relative;
-  left: 125px;
   padding-left: 10px;
 }
 

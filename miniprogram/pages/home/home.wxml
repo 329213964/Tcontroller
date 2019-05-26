@@ -20,36 +20,20 @@
   </view>
 </view>
 
-<view class='knowledge'> 
+<view class='knowledge' wx:for="{{menu}}" data-knowName='{{item.mdfile}}' bindtap='knowin'> 
   <view class='k'>
     <view class='kcontent'>
-      <text class='knowtext'>内融融asfjioasjfisajfioasfjisoafjsiajfijasfjsofjasifjsioafisafjsajfioasd
+      <text class='knowtext'>
+        {{item.knowInfo}}
       </text>
     </view>
     <view class='klike'>
-      <image class='img-like' src='/images/like.png'></image>
-      <view class='text-like'>1111</view>
+      <image class='img-like' src='/images/like.png' bindtap='good'></image>
+      <view class='text-like'>{{item.goodNum}}</view>
     </view>
-    <text class='date'>2019/5/22</text>
+    <text class='date'>{{item.submitTime}}</text>
   </view>
-  <image src='/images/adm.png' class='home-png'></image>
-</view>
-<view class='knowledge'> 
-  <view class='k'>
-    <view class='kcontent'>
-      <text class='knowtext'>内融融asfjioasjfisajfioasfjisoafjsiajfijasfjsofjasifjsioafisafjsajfioasd
-      </text>
-    </view>
-    <view class='klike'>
-      <image class='img-like' src='/images/like.png'></image>
-      <view class='text-like'>1111</view>
-    </view>
-    <text class='date'>2019/5/22</text>
-  </view>
-  <image src='/images/adm.png' class='home-png'></image>
-</view>
-<view class='knowledge'>
-  <image src='/images/adm.png' class='home-png'></image>
+  <image src='/images/{{item.knowImg}}' class='home-png'></image>
 </view>
 
 

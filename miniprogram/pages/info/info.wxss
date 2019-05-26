@@ -19,6 +19,15 @@
   width: 80px;
   height: 80px;
 }
+
+.adm-png-1{
+  opacity: 0.8;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  overflow:hidden;
+}
+
 .btn1 {
   width: 80%;
   margin-top: 20rpx;

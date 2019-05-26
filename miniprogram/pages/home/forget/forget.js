@@ -1,4 +1,6 @@
-// miniprogram/pages/home/forgetfourth/forgetfourth.js
+
+
+// miniprogram/pages/home/forget/forget.js
 Page({
 
   /**
@@ -12,12 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    getApp().globalData.user_phone = ""
-    getApp().globalData.user_name = ""
-    getApp().globalData.user_phone_true = ""
-    wx.setStorageSync("user_phone", "")
-    wx.setStorageSync("user_name", "")
-    wx.setStorageSync("user_phone_true", "")
+
   },
 
   /**
@@ -67,10 +64,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }, 
-  returnlogin:function(e){
-    wx.redirectTo({
-      url: '../login/login'　
-    })
   }
 })

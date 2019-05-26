@@ -20,7 +20,7 @@
                     </picker>
                 </view>
                 <view class="weui-cell__bd weui-cell__bd_in-select-before">
-                    <input class="weui-input" name="phoneNum" placeholder="请输入原手机号码" bindinput="inputPhoneNum"/>
+                    <input class="weui-input" name="phoneNum" disabled='false' placeholder="{{phoneNum}}" bindinput="inputPhoneNum"/>
                 </view>
                 <view class="weui-cell__ft" style="width: 35%">
                     <view class="{{isnum}}" bindtap="genVerifyCode">{{isnumtext}}</view>

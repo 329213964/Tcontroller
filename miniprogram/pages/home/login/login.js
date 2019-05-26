@@ -23,6 +23,11 @@ Page({
       url: '../register/register',
     })
   },
+  forget_href:function(e){
+    wx.navigateTo({
+      url: '../forgetfirst/forget',
+    })
+  },
   //处理pwdBlurt的触发事件
   pwdBlur: function (e) {
     var pwd = e.detail.value;//从页面获取到用户输入的密码
@@ -30,65 +35,9 @@ Page({
       this.setData({ password: pwd });//把获取到的密码赋值给全局变量Date中的password
     }
   },
-  wxlogin: function () {
-    wx.getSetting({
-      success(res) {
-        if (!res.authSetting['scope.userInfo']) {
-          wx.authorize({
-            scope: 'scope.userInfo',
-            success() {
-              console.log("授权成功");
-            }, fail: function (res) {
-              console.log("调用API失败");
-            }
-          })
-        }
-        wx.login({
-          success: function (res) {
-            console.log(res.code)
-            console.log(res)
-            //发送请求
-            wx.request({
-              url: 'http://localhost:8080/user/wx/login', //接口地址
-              data: {
-                code: res.code
-              },
-              header: {
-                'content-type': 'application/json' //默认值
-              },
-              success: function (res) {
-                console.log(res.data);
-                if (res.data.data.userName == null) {
-                  getApp().globalData.login_status = 1
-                  getApp().globalData.userid = res.data.userid
-                  wx.setStorageSync("userid", res.data.userid)
-
-                } else {
-                  getApp().globalData.login_status = 1
-                  getApp().globalData.user_address = res.data.data.userAddress
-                  getApp().globalData.user_icon = res.data.data.userInfo
-                  getApp().globalData.user_phone = res.data.data.userPhone.substring(0, 3) + '*****' + res.data.data.userPhone.substring(8, 3)
-                  getApp().globalData.user_name = res.data.data.userName
-                  getApp().globalData.wx_id = res.data.data.wxId
-                  //将用户的信息保存到手机存储卡中
-                  wx.setStorageSync("login_status", 1)
-                  wx.setStorageSync("user_address", res.data.data.userAddress)
-                  wx.setStorageSync("user_icon", res.data.data.userInfo)
-                  wx.setStorageSync("user_phone", res.data.data.userPhone.substring(0, 3) + '*****' + res.data.data.userPhone.substring(8, 11))
-                  wx.setStorageSync("user_name", res.data.data.userName)
-                  wx.setStorageSync("wx_id", res.data.data.wxId)
-                  console.log("true");
-                  wx.switchTab({
-                    url: '/pages/home/home',
-                  })
-                }
-              }
-            })
-          }
-        })
-      }, fail(res) {
-        console.log("error");
-      }
+  wxlogin:function(e){
+    wx.navigateTo({
+      url: '../login/login-other/login-other',
     })
   },
 
@@ -105,7 +54,7 @@ Page({
     }
     
     wx.request({
-      url: 'http://localhost:8080/user/login',//后面详细介绍
+      url: 'https://fix.foxcii.com/user/login',//后面详细介绍
       //定义传到后台的数据
       data: {
         //从全局变量data中获取数据
@@ -123,19 +72,30 @@ Page({
           wx.showToast({
             title: '登陆成功',
           })
-          
+          if(res.data.userPhone==null){
+            getApp().globalData.userid=res.data.userid
+            wx.setStorageSync("userid", res.data.userid);
+            wx.redirectTo({
+              url: '/pages/home/phone/phone',
+            })
+            return;
+          }
           //更新getApp().globalData中的数据，是更新内存中的数据
           getApp().globalData.login_status = 1
-          getApp().globalData.user_address=res.data.userAddress
           getApp().globalData.user_icon=res.data.userInfo
           getApp().globalData.user_phone = res.data.userPhone.substring(0, 3) + '*****' + res.data.userPhone.substring(8, 3)
+          getApp().globalData.user_phone_true = res.data.userPhone
           getApp().globalData.user_name = res.data.userName
+          getApp().globalData.wx_id = res.data.wxId
+          getApp().globalData.userid = res.data.userid
+          wx.setStorageSync("userid", res.data.userid);
           //将用户的信息保存到手机存储卡中
           wx.setStorageSync("login_status",1)
-          wx.setStorageSync("user_address", res.data.userAddress)
           wx.setStorageSync("user_icon", res.data.userInfo)
           wx.setStorageSync("user_phone", res.data.userPhone.substring(0, 3) + '*****' + res.data.userPhone.substring(8, 11))
+          wx.setStorageSync("user_phone_true", res.data.userPhone)
           wx.setStorageSync("user_name", res.data.userName)
+          wx.setStorageSync("wx_id", res.data.wxId)
           wx.switchTab({
             url: '/pages/home/home',
           })

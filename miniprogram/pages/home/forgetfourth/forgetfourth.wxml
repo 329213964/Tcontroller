@@ -16,7 +16,7 @@
       <image class='success-png' src='/images/success.png'></image>
       <view class='success-text'>恭喜您,修改成功!</view>
     </view>
-     <button class='btn1' bindtap=''>
+     <button class='btn1' bindtap='returnlogin'>
     <view>完成修改</view>
   </button>
 </view>

@@ -1,11 +1,12 @@
 <!--miniprogram/pages/home/guarantee/guarantee.wxml-->
       
 <view class="content">
-  <view class="address">
-    <view class="address-title">地址</view>
-    <view class="num"><input bindinput="addressInput" placeholder="详细地址(精确到寝室)" placeholder-style="color:#999999;"/></view>
+  <view class="address-div" hover-class='address-div-click' bindtap='chooseAddress'>
+    <view class="address-title">地址
+      <text class='address-text'>{{address}}</text>
+      <image class='arrow_right' src='/images/arrow_right.png' ></image>
+    </view>
   </view>
-  <view class="hr"></view>
    
   <view class="info">
     <view class="fault-info">故障描述</view>

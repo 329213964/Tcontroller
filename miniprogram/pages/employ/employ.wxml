@@ -5,21 +5,34 @@
 </view>
 
 <view class="page-wrapper" wx:if="{{login_status==1}}">
+  <view class='orderimg1_div' wx:if="{{menu.length==0}}">
+    <image class='orderimg1' src='/images/order.png'></image>
+    <text>暂无订单</text>
+  </view>
   <view class="bus-list js_bus_list" wx:for="{{menu}}">
       <view data-supplierid="100020" data-key="" class="bus-list-item  ">
-        <view class="bus-time"> 2019/5/14 08:25</view>
+        <view class="bus-time">{{item.employTime}}</view>
         <!-- tobooking监听 -->
-        <view class="tobooking" bindtap='orderin'> 详情 </view>
+        <view class="tobooking" bindtap='orderin' data-employid='{{item.employid}}'> 详情 </view>
         <view class="detail">
           <view class="detail1">
             <view class="start">
-              <text class="icon-circle s-icon1"> 地址：</text>地址</view>
+              <text class="icon-circle s-icon1 employInfo"> 故障描述：{{item.employInfo}}</text></view>
             <!-- <view class="end">
               <text class="icon-circle s-icon2"></text>连州</view> -->
           </view>
           <view class="tags">
-            <view>
-              <text class="countleft">客户名称</text>
+            <view  wx:if="{{item.employStatus==0}}">
+              <view class='colorDiv-submit'></view>
+              <text class="countleft" style='float: left;'>已提交</text>
+            </view>
+            <view  wx:if="{{item.employStatus==1}}">
+              <view class='colorDiv-ing'></view>
+              <text class="countleft" style='float: left;'>维修中</text>
+            </view>
+            <view  wx:if="{{item.employStatus==2}}">
+              <view class='colorDiv-final'></view>
+              <text class="countleft" style='float: left;'>已完成</text>
             </view>
             <view>
               <text class="b-tags js_tags"></text>

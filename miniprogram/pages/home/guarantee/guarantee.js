@@ -1,4 +1,5 @@
 // miniprogram/pages/home/guarantee/guarantee.js
+var myUtils = require("../../../utils/myUtils.js")
 Page({
 
   /**
@@ -8,8 +9,9 @@ Page({
     // 最大字符数
     maxTextLen: 200,
     // 默认长度
-    textLen: 0
-
+    textLen: 0,
+    address:"",
+    addresslist:[]
   },
 
   /**
@@ -23,14 +25,33 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    if (myUtils.get("login_status") == 0 || myUtils.get("login_status") ==null){
+      wx.redirectTo({
+        url: '../login/login',
+      })
+      return;
+    }
+    var dateList = myUtils.get("user_address").split("|");
+    var arr = []
+    for (var i in dateList) {
+      arr = arr.concat(dateList[i]);
+      console.log(arr)
+    }
+    this.setData({
+      addresslist:arr
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+      var address=myUtils.get("choose_address");
+      if(address!=null){
+        this.setData({
+          address:address
+        })
+      }
   },
 
   /**
@@ -87,5 +108,8 @@ Page({
         textLen: textLen
     });
     
+  },
+  chooseAddress:function(e){
+
   }
 })

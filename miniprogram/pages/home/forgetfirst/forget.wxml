@@ -18,7 +18,7 @@
   </view>
   <view class="hr"></view>
   </view>
-   <button class='btn1' bindtap=''>
+   <button class='btn1' bindtap='selectName'>
     <view>下一步</view>
   </button>
 
