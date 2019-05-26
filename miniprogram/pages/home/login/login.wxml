@@ -18,9 +18,13 @@
   <button class='btn1' bindtap='login'>
     <view>登录</view>
  </button>
+ <button class='btn2' open-type='openSetting'>
+    <image class='btnImg' src='/images/wechat.png'></image>
+    <view>微信登录</view>
+ </button>
  <!-- <view class='otherindex' style='text-decoration:underline'>社交帐号登录</view> -->
- <image src='/images/wechat1.png' class='toy' bindtap='wxlogin' open-type='getUserInfo'></image>
+ <!-- <image src='/images/wechat1.png' class='toy' bindtap='wxlogin' open-type='getUserInfo'></image>
  <image src='/images/sina.png' class='toy'></image>
- <image src='/images/qq.png' class='toy'></image>
+ <image src='/images/qq.png' class='toy'></image> -->
 </view>
 
