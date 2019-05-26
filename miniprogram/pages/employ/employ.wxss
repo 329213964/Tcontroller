@@ -1,4 +1,8 @@
 /* miniprogram/pages/employ/employ.wxss */
+page{
+  height: 100%;
+}
+
 .text{
     display: block;
     font-size:28rpx;
@@ -17,7 +21,19 @@
   flex-direction: column;
 }
 
+.orderimg1_div{
+  margin-top: 50%;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .orderimg0_div text{
+  font-size: 16px;
+  color: #7a7a7a;
+}
+
+.orderimg1_div text{
   font-size: 16px;
   color: #7a7a7a;
 }
@@ -25,7 +41,13 @@
 .orderimg0{
   width: 100px;
   height: 100px;
-  opacity: 0.75;
+  opacity: 0.6;
+}
+
+.orderimg1{
+  width: 100px;
+  height: 100px;
+  opacity: 0.6;
 }
 
 .orderimg0_btn{
@@ -44,7 +66,8 @@
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     -webkit-tap-highlight-color: transparent;
-    min-height:2000rpx;
+    height: 100%;
+    /* min-height:2000rpx; */
 }
 
 .bus-list .bus-list-item {
@@ -170,6 +193,53 @@
     top: 0;
 }
 
-.test-test-test{
-  
+.colorDiv-submit{
+  margin-top: 4px;
+  margin-left: 10px;
+  margin-right: 3px;
+  width: 8px;
+  height: 8px;
+  float: left;
+  border-radius: 8px;
+  overflow: hidden;
+  border:2px solid #a5a5a5; 
+  background-color: #e5e5e5;
+}
+
+.colorDiv-ing{
+  margin-top: 4px;
+  margin-left: 10px;
+  margin-right: 3px;
+  width: 8px;
+  height: 8px;
+  float: left;
+  border-radius: 8px;
+  overflow: hidden;
+  border:2px solid #a5a5a5; 
+  background-color: #ffff00;
+}
+
+.colorDiv-final{
+  margin-top: 4px;
+  margin-left: 10px;
+  margin-right: 3px;
+  width: 8px;
+  height: 8px;
+  float: left;
+  border-radius: 8px;
+  overflow: hidden;
+  border:2px solid #a5a5a5; 
+  background-color: #65d665;
+}
+
+.employInfo{
+    display: block;
+    line-height: 40rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
+
+.countleft{
+  font-size: 13px;
 }

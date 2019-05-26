@@ -1,7 +1,7 @@
 {
   "pages": [
-
-    "pages/home/home",
+"pages/employ/employ",
+      "pages/home/home",
       "pages/home/guarantee/guarantee",
 
       "pages/home/advertise/advertise",
@@ -22,7 +22,7 @@
     "pages/home/login/login-other/login-wx",
     
     
-    "pages/employ/employ",
+    
 
     "pages/info/info",
     "pages/home/register/register",

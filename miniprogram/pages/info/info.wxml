@@ -8,7 +8,8 @@
 </view>
 <view wx:if='{{login_status==1}}'>
   <view class='imgdiv1'>
-    <image src='/images/{{user_icon}}.png' class='adm-png'></image>
+    <image src='/images/{{user_icon}}.png' wx:if='{{wx_status==0}}'  class='adm-png'></image>
+    <open-data type="userAvatarUrl" wx:if='{{wx_status==1}}'  class='adm-png-1'></open-data>
     <text style='color:#8a8a8a'>{{user_name}}</text>
   </view>
   <view class='address-div' style='margin-top:20px' hover-class='address-div-click'>

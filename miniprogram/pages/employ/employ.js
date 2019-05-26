@@ -17,9 +17,14 @@ Page({
   onLoad: function (options) {
     var that = this;
     var status = myUtils.get("login_status");
-    if(status==0)return;
+    var userid=myUtils.get("userid");
+    if(status==0||status==null)return;
     wx.request({
-      url: 'https://skr.foxcii.com/menu/selectAll',
+      url: 'https://fix.foxcii.com/employ/selectByUserid',
+      data: {
+        //从全局变量data中获取数据
+        userid:userid
+      },
       method: 'get',//定义传到后台接受的是post方法还是get方法
       header: {
         'content-type': 'application/json' // 默认值
@@ -91,6 +96,37 @@ Page({
       wx.stopPullDownRefresh() //停止下拉刷新
 
     }, 1500);
+    var that = this;
+    var status = myUtils.get("login_status");
+    var userid = myUtils.get("userid");
+    if (status == 0 || status == null) return;
+    wx.request({
+      url: 'https://fix.foxcii.com/employ/selectByUserid',
+      data: {
+        //从全局变量data中获取数据
+        userid: userid
+      },
+      method: 'get',//定义传到后台接受的是post方法还是get方法
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log("调用API成功");
+        console.log(res.data);
+        if (res.data) {
+          that.setData({
+            menu: res.data
+          })
+        }
+        else {
+          wx.showModal({
+            title: '提示',
+            content: '服务器繁忙',
+            showCancel: false
+          })
+        }
+      }
+    })
   },
 
   /**
