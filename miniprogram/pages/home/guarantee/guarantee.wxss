@@ -11,9 +11,25 @@
    width: 90%;
 }
 .address-title{
-   margin-right: 30px;
-   font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  vertical-align: text-top;
+  justify-content: center;  
+  align-items: center;
+  font-weight: bold;
 }
+
+.address-text{
+  font-size: 15px;
+  margin-left: 20px;
+  font-weight:normal;
+  width: 80%;
+  display: block;
+  overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
+
 .hr{
   border: 1px solid #cccccc;
   opacity: 0.2;
@@ -88,4 +104,26 @@
   left: 35px;
  
 
+}
+
+
+
+.address-div{
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  padding: 10px;
+}
+
+.address-div-click{
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+.arrow_right{
+  float: right;
+  margin-top: 5px;
+  width: 10px;
+  height: 20px;
 }

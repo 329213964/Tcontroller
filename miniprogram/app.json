@@ -1,9 +1,8 @@
 {
   "pages": [
-
-
+"pages/home/guarantee/guarantee",
     "pages/home/home",
-    "pages/home/guarantee/guarantee",
+    
     "pages/home/advertise/advertise",
     "pages/home/advertise/advertise-info/advertise-info",
     "pages/home/forgetfirst/forget",
