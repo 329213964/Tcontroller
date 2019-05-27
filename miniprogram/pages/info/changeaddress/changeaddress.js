@@ -1,11 +1,12 @@
 // miniprogram/pages/info/changeaddress/changeaddress.js
+var myUtils = require("../../../utils/myUtils.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    address:-1
   },
 
   /**
@@ -26,7 +27,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var dateList = myUtils.get("user_address").split("|");
+    var arr = []
+    for (var i in dateList) {
+      arr = arr.concat(dateList[i]);
+      console.log(arr)
+    }
+    var addressNum = myUtils.get("addressNum")-1;
+    console.log(addressNum);
+    this.setData({
+      address: arr[addressNum]
+    })
   },
 
   /**

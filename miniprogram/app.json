@@ -1,6 +1,7 @@
 {
   "pages": [
     
+    "pages/info/changeaddress/changeaddress",
 
     "pages/home/home",
     "pages/home/guarantee/guarantee",
@@ -20,9 +21,6 @@
     "pages/employ/fix/fix",
     "pages/info/info",
     "pages/info/address/address",
-    "pages/info/changeaddress/changeaddress",
-    
-
     "pages/home/phone/phone"
    
   ],

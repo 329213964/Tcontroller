@@ -35,7 +35,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    getApp().globalData.addressNum = null;
+    getApp().globalData.doMethod = null;
+    wx.setStorageSync("addressNum", null);
+    wx.setStorageSync("doMethod", null)
   },
 
   /**
@@ -71,5 +74,18 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  updateAddress:function(e){
+    var addressNum = e.currentTarget.dataset.addressnum+1;
+    var doMethod="update";
+    console.log(e.currentTarget.dataset);
+    getApp().globalData.addressNum = addressNum;
+    getApp().globalData.doMethod = doMethod;
+    wx.setStorageSync("addressNum", addressNum);
+    wx.setStorageSync("doMethod", doMethod)
+    wx.navigateTo({
+      url: '../changeaddress/changeaddress',
+    })
+    return;
   }
 })

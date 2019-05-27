@@ -3,7 +3,7 @@
   <view class='top'>
     <view class='left'>
       <view class='address'>{{item}}</view>
-      <image src='/images/revise.png' class='right'></image>
+      <image data-addressnum='{{index}}' src='/images/revise.png' class='right' bindtap='updateAddress'></image>
     </view>
   </view>
  </view>
