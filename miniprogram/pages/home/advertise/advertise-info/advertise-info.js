@@ -9,9 +9,9 @@ Page({
     const _ts = this;
     var mdfile=myUtils.get("knowName");
     //请求markdown文件，并转换为内容
-    if (myUtils.get("knowid") != null || myUtils.get("knowid")!=""){
+    if (myUtils.get("knowid") != null&&myUtils.get("knowid")!=""){
       wx.request({
-        url: 'https://skr.foxcii.com/know/seeKnow',
+        url: 'https://fix.foxcii.com/know/seeKnow',
         data: {
           knowid: myUtils.get("knowid")
         },
