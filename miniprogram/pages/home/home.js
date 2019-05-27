@@ -117,6 +117,9 @@ Page({
   knowin:function(e){
     var knowName = e.currentTarget.dataset.know.mdfile
     var knowid = e.currentTarget.dataset.know.knowid
+    if(knowid==null||knowid==""){
+      knowName = e.currentTarget.dataset.know
+    }
     console.log(e.currentTarget);
     getApp().globalData.knowName = knowName;
     getApp().globalData.knowid = knowid;
