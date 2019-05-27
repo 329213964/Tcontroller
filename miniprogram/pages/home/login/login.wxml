@@ -7,7 +7,7 @@
   <view class="hr"></view>
    <view class="account">
     <view class="title">密码</view>
-    <view class="num"><input bindblur="pwdBlur" placeholder="请输入密码" password placeholder-style="color:#999999;"/></view>
+    <view class="num"><input bindinput="pwdBlur" placeholder="请输入密码" password placeholder-style="color:#999999;"/></view>
   </view>
   <view class="hr"></view>
   <view class='btn'style='margin-top:10px;padding-left:20px'>

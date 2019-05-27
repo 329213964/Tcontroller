@@ -2,7 +2,7 @@
 <view class='top'>
   <view class='left'>
     <view class='address'>
-      <input bindinput=""  value='{{address}}' placeholder-style="color:#999999;"/>
+      <input bindinput=""  value='{{address}}' bindinput='changeAddress' placeholder-style="color:#999999;"/>
        <view class='hr3'></view>
     </view>
    
@@ -10,6 +10,6 @@
   <!-- <image src='/images/revise.png' class='right'></image> -->
 </view>
  <view class="hr"></view>
-<button class='btn1' bindtap=''>
+  <button class='btn1' bindtap='doAddressMethod'>
     <view>保存</view>
   </button>

@@ -20,7 +20,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
@@ -32,7 +32,7 @@ Page({
     wx.setStorageSync("addressNum", null);
     wx.setStorageSync("doMethod", null)
 
-    if (myUtils.get("user_address")==null)return;
+    if (myUtils.get("user_address") == null) return;
     var dateList = myUtils.get("user_address").split("|");
     var arr = []
     for (var i in dateList) {
@@ -41,7 +41,7 @@ Page({
     this.setData({
       addresslist: arr
     })
-    
+
   },
 
   /**
@@ -78,24 +78,12 @@ Page({
   onShareAppMessage: function () {
 
   },
-  updateAddress:function(e){
-    var addressNum = e.currentTarget.dataset.addressnum+1;
-    var doMethod="update";
-    getApp().globalData.addressNum = addressNum;
-    getApp().globalData.doMethod = doMethod;
-    wx.setStorageSync("addressNum", addressNum);
-    wx.setStorageSync("doMethod", doMethod)
+  chooseAdd: function (e) {
+    var addressNum = e.currentTarget.dataset.addressnum;
+    getApp().globalData.choose_address = this.data.addresslist[addressNum];
+    wx.setStorageSync("choose_address", this.data.addresslist[addressNum]);
     wx.redirectTo({
-      url: '../changeaddress/changeaddress',
-    })
-    return;
-  },
-  insertAddress:function(e){
-    var doMethod = "insert";
-    getApp().globalData.doMethod = doMethod;
-    wx.setStorageSync("doMethod", doMethod)
-    wx.redirectTo({
-      url: '../changeaddress/changeaddress',
+      url: './guarantee',
     })
     return;
   }

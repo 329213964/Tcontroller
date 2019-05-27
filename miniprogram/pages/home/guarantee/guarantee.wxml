@@ -15,7 +15,7 @@
       <view class='text-count-display f f-end'>{{textLen}}/{{maxTextLen}}</view>
     </view>
   </view>
-  <button class='btn1' bindtap=''>
+  <button class='btn1' bindtap='employSubmit'>
     <view>报修</view>
   </button>
 

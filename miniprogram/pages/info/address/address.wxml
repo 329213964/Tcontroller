@@ -1,5 +1,5 @@
 <!--miniprogram/pages/info/address/address.wxml-->
-<view wx:for="{{addresslist}}">
+<view wx:for="{{addresslist}}" wx:if="{{addresslist!=null}}">
   <view class='top'>
     <view class='left'>
       <view class='address'>{{item}}</view>
@@ -7,6 +7,6 @@
     </view>
   </view>
  </view>
-<view class='top' hover-class='top-click'>
+<view class='top' hover-class='top-click' bindtap='insertAddress'>
   <image class='add' src='/images/add.png'></image>
 </view>

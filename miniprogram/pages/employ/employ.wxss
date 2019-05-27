@@ -22,7 +22,6 @@ page{
 }
 
 .orderimg1_div{
-  margin-top: 50%;
   display:flex;
   align-items: center;
   flex-direction: column;
@@ -45,6 +44,8 @@ page{
 }
 
 .orderimg1{
+  
+  margin-top: 50%;
   width: 100px;
   height: 100px;
   opacity: 0.6;

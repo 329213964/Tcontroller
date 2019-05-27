@@ -1,0 +1,8 @@
+<!--miniprogram/pages/info/address/address.wxml-->
+<view wx:for="{{addresslist}}" wx:if="{{addresslist!=null}}">
+  <view class='top' hover-class='top-click' bindtap='chooseAdd' data-addressnum='{{index}}'>
+    <view class='left'>
+      <view class='address'>{{item}}</view>
+    </view>
+  </view>
+ </view>

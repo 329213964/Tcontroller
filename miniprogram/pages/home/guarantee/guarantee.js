@@ -10,6 +10,7 @@ Page({
     maxTextLen: 200,
     // 默认长度
     textLen: 0,
+    info:"",
     address:"",
     addresslist:[]
   },
@@ -35,7 +36,6 @@ Page({
     var arr = []
     for (var i in dateList) {
       arr = arr.concat(dateList[i]);
-      console.log(arr)
     }
     this.setData({
       addresslist:arr
@@ -104,12 +104,78 @@ Page({
       let textLen = e.detail.value.length;
   
       page.setData({
+        info:e.detail.value,
         maxTextLen: maxTextLen,
         textLen: textLen
     });
     
   },
   chooseAddress:function(e){
+    wx.navigateTo({
+      url: './chooseAddress',
+    })
+  },
+  employSubmit:function(e){
+    if(this.data.address==null||this.data.address==""||
+    this.data.info==null||this.data.info==""){
+      wx.showModal({
+        title: '提示',
+        content: '不可留空',
+        showCancel: false
+      })
+      return;
+    }else{
+      var timestamp = Date.parse(new Date());  
+      var date = new Date(timestamp); 
+      var year = date.getFullYear()
+      var month = date.getMonth()+1; 
+      var day = date.getDate()
+      var hour = date.getHours()
+      var minute = date.getMinutes()
+      
+      var time = year + "-" + month + "-" + day + " " + hour + ":" + minute;
+      console.log(time);
 
+      wx.request({
+        url: 'http://localhost:8080/employ/addEmploy',
+        //定义传到后台的数据
+        data: {
+          //从全局变量data中获取数据
+          employInfo:this.data.info,
+          employTime:time,
+          employAddress: this.data.address,
+          userid: myUtils.get("userid")
+          
+        },
+        method: 'get',//定义传到后台接受的是post方法还是get方法
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success: function (res) {
+          console.log("调用API成功");
+          if (res.data == 0) {
+            wx.showModal({
+              title: '提示',
+              content: '服务器繁忙',
+              showCancel: false
+            })
+            return;
+          } else {
+            
+            wx.switchTab({
+              url: '../home'
+            })
+            wx.showToast({
+              title: '提交成功',
+            })
+
+          }
+
+        },
+        fail: function (res) {
+          console.log("调用API失败");
+        }
+      })
+    }
   }
 })

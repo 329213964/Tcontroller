@@ -1,10 +1,9 @@
 {
   "pages": [
-    
-    "pages/info/changeaddress/changeaddress",
-
-    "pages/home/home",
     "pages/home/guarantee/guarantee",
+    "pages/home/home",
+    
+    "pages/home/guarantee/chooseAddress",
     "pages/home/advertise/advertise",
     "pages/home/advertise/advertise-info/advertise-info",
     "pages/home/forgetfirst/forget",
@@ -17,12 +16,14 @@
     "pages/home/login/login",
     "pages/home/login/login-other/login-other",
     "pages/home/login/login-other/login-wx",
+    "pages/home/register/register",
     "pages/employ/employ",
     "pages/employ/fix/fix",
     "pages/info/info",
     "pages/info/address/address",
+    "pages/info/changeaddress/changeaddress",
     "pages/home/phone/phone"
-   
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
