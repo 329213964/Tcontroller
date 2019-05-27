@@ -58,7 +58,7 @@ Page({
             fixid:res.data.fixid
           })
           wx.request({
-            url: 'https://fix.foxcii.com/fix/selectByFixid',
+            url: 'https://fix.foxcii.com/fixer/selectByfixid',
             data: {
               //从全局变量data中获取数据
               fixid: that.data.fixid
