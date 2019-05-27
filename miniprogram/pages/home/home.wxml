@@ -9,19 +9,19 @@
     <text class='guarantee'>报修</text>
   </view>
   <view class='subgroup-chat' >
-    <image class='subgroup2' src='/images/contact.png' data-knowName='{{item.mdfile}}' bindtap='knowin'>
+    <image class='subgroup2' src='/images/contact.png' data-know='{{item}}' bindtap='knowin'>
     </image> 
     <text class='chat'>联系我们</text>
   </view>
   <view class='subgroup-about' >
-    <image class='subgroup3' src='/images/about.png' data-knowName='{{item.mdfile}}' bindtap='knowin'>
+    <image class='subgroup3' src='/images/about.png' data-know='{{item}}' bindtap='knowin'>
     </image> 
     <text class='about'>关于</text>
   </view>
 </view>
 
-<view class='knowledge' wx:for="{{menu}}" data-knowName='{{item.mdfile}}' bindtap='knowin'> 
-  <view class='k'>
+<view class='knowledge' wx:for="{{menu}}" data-know='{{item}}'bindtap='knowin'> 
+  <view class='k' >
     <view class='kcontent'>
       <text class='knowtext'>
         {{item.knowInfo}}

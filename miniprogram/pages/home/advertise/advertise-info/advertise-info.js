@@ -10,6 +10,18 @@ Page({
     var mdfile=myUtils.get("knowName");
     //请求markdown文件，并转换为内容
     wx.request({
+      url: 'https://skr.foxcii.com/know/seeKnow',
+      data:{
+        knowid:myUtils.get("knowid")
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+      }
+    })
+
+    wx.request({
       url: 'https://raw.githubusercontent.com/329213964/Tcontroller/master/miniprogram/posts/'+mdfile,
       header: {
         'content-type': 'application/x-www-form-urlencoded'

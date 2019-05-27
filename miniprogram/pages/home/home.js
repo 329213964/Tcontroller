@@ -9,7 +9,7 @@ Page({
    */
   data: {
     login_status: 0,
-    menu: {}
+    menu:[]
   },
 
   /**
@@ -115,11 +115,14 @@ Page({
     })
   },
   knowin:function(e){
-    var knowName = e.currentTarget.dataset.knowname
+    var knowName = e.currentTarget.dataset.know.mdfile
+    var knowid = e.currentTarget.dataset.know.knowid
     console.log(e.currentTarget);
     getApp().globalData.knowName = knowName;
+    getApp().globalData.knowid = knowid;
     //将用户的信息保存到手机存储卡中
     wx.setStorageSync("knowName", knowName);
+    wx.setStorageSync("knowid", knowid);
     wx.navigateTo({
       url: './advertise/advertise-info/advertise-info',
     })
