@@ -57,6 +57,9 @@ Page({
             info: res.data.employInfo,
             fixid:res.data.fixid
           })
+          if(that.data.fixid==null||that.data.fixid==""){
+            return;
+          }
           wx.request({
             url: 'https://fix.foxcii.com/fixer/selectByfixid',
             data: {
