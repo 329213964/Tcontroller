@@ -36,7 +36,7 @@ Page({
   onShow: function () {
     var that=this;
     wx.request({
-      url:'http://localhost:8080/employ/selectByEmployid',
+      url:'https://fix.foxcii.com/employ/selectByEmployid',
       data: {
         //从全局变量data中获取数据
         employid: myUtils.get("employid")
@@ -58,7 +58,7 @@ Page({
             fixid:res.data.fixid
           })
           wx.request({
-            url: 'http://localhost:8080/fix/selectByFixid',
+            url: 'https://fix.foxcii.com/fix/selectByFixid',
             data: {
               //从全局变量data中获取数据
               fixid: that.data.fixid

@@ -43,7 +43,7 @@ Page({
     var that = this;
     var status = myUtils.get("login_status");
     wx.request({
-      url: 'http://localhost:8080/know/selectAll',
+      url: 'https://fix.foxcii.com/know/selectAll',
       method: 'get',//定义传到后台接受的是post方法还是get方法
       header: {
         'content-type': 'application/json' // 默认值
@@ -101,7 +101,11 @@ Page({
   onShareAppMessage: function () {
 
   },
-
+  guarantee:function(e){
+    wx.navigateTo({
+      url: '/pages/home/guarantee/guarantee',
+    })
+  },
   /**
    * 登录跳转
    */

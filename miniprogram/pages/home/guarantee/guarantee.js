@@ -111,7 +111,7 @@ Page({
     
   },
   chooseAddress:function(e){
-    wx.navigateTo({
+    wx.redirectTo({
       url: './chooseAddress',
     })
   },
@@ -137,7 +137,7 @@ Page({
       console.log(time);
 
       wx.request({
-        url: 'http://localhost:8080/employ/addEmploy',
+        url: 'https://fix.foxcii.com/employ/addEmploy',
         //定义传到后台的数据
         data: {
           //从全局变量data中获取数据
@@ -161,7 +161,8 @@ Page({
             })
             return;
           } else {
-            
+            getApp().globalData.choose_address =null;
+            wx.setStorageSync("choose_address", null);
             wx.switchTab({
               url: '../home'
             })

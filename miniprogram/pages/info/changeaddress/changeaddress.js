@@ -120,7 +120,7 @@ Page({
         }
       }
       wx.request({
-        url: 'http://localhost:8080/user/updateAddress',
+        url: 'https://fix.foxcii.com/user/updateAddress',
         //定义传到后台的数据
         data: {
           //从全局变量data中获取数据
@@ -169,7 +169,7 @@ Page({
         }
       }
       wx.request({
-        url: 'http://localhost:8080/user/updateAddress',
+        url: 'https://fix.foxcii.com/user/updateAddress',
         //定义传到后台的数据
         data: {
           //从全局变量data中获取数据
