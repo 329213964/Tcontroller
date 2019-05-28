@@ -65,8 +65,8 @@
   display:flex;
   flex-direction: row;
   padding: 10px;
-  box-shadow:3rpx 3rpx 3rpx 3rpx rebeccapurple inset;
-  background-color: #5bbfe71f;
+  box-shadow:3rpx 3rpx 3rpx 3rpx #eaeaea inset;
+  background-color: #fcfcfc;
 }
 .k{
   width: 60%;
@@ -118,6 +118,7 @@
   display: flex;
   flex-direction: row;
   justify-content:center; 
+  margin-bottom: 5px;
 }
 
 .guarantee{
