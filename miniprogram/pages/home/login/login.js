@@ -88,7 +88,9 @@ Page({
           getApp().globalData.user_name = res.data.userName
           getApp().globalData.wx_id = res.data.wxId
           getApp().globalData.userid = res.data.userid
+          getApp().globalData.user_address = res.data.userAddress
           wx.setStorageSync("userid", res.data.userid);
+          wx.setStorageSync("user_address", res.data.userAddress);
           //将用户的信息保存到手机存储卡中
           wx.setStorageSync("login_status",1)
           wx.setStorageSync("user_icon", res.data.userInfo)
