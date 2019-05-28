@@ -32,7 +32,12 @@ Page({
     wx.setStorageSync("addressNum", null);
     wx.setStorageSync("doMethod", null)
 
-    if (myUtils.get("user_address") == null) return;
+    if (myUtils.get("user_address") == "" || myUtils.get("user_address") == null) {
+      wx.redirectTo({
+        url: '/pages/info/address/address',
+      })
+      return;
+    }
     var dateList = myUtils.get("user_address").split("|");
     var arr = []
     for (var i in dateList) {

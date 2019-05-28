@@ -29,12 +29,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (myUtils.get("user_address") == "" || myUtils.get("user_address")==null){
-      wx.redirectTo({
-        url: '/pages/info/address/address',
-      })
+    var dateList=[];
+    if (myUtils.get("user_address")!=null&&myUtils.get("user_address")!=""){
+      dateList = myUtils.get("user_address").split("|");
     }
-    var dateList = myUtils.get("user_address").split("|");
     var arr = []
     for (var i in dateList) {
       arr = arr.concat(dateList[i]);

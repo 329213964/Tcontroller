@@ -32,14 +32,6 @@ Page({
       })
       return;
     }
-    var dateList = myUtils.get("user_address").split("|");
-    var arr = []
-    for (var i in dateList) {
-      arr = arr.concat(dateList[i]);
-    }
-    this.setData({
-      addresslist:arr
-    })
   },
 
   /**
