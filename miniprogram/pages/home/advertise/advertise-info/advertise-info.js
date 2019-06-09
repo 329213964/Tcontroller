@@ -24,7 +24,7 @@ Page({
     }
 
     wx.request({
-      url: 'https://raw.githubusercontent.com/329213964/Tcontroller/master/miniprogram/posts/'+mdfile,
+      url: 'https://tutor.foxcii.com/posts/'+mdfile,
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
